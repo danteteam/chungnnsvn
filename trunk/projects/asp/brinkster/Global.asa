@@ -1,0 +1,21 @@
+<script language="vbscript" runat="server">
+
+    sub Application_OnStart
+         Application("DBPath") = Server.MapPath("App_Data") & "\MyDB.mdb"
+         Application("UserName") = ""            
+    end sub
+
+    sub Application_OnEnd
+          Application("DBPath") = ""
+          Session("UserName") = ""                    
+    end sub
+
+    sub Session_OnStart        
+        Session("UserName") = ""
+    end sub
+
+    sub Session_OnEnd        
+        Session("UserName") = ""        
+    end sub
+
+</script>
