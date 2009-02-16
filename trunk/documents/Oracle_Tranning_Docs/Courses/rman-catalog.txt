@@ -1,0 +1,66 @@
+SQL> create tablespace rcat_ts datafile 'C:\oradata\coldbk\rcat_ts01.dbf' size 100M autoextend on maxsize 2G;
+
+	Tablespace created.
+
+	SQL> create user rcat identified by rcat default tablespace rcat_ts;
+
+	User created.
+
+	SQL> grant connect,resource,create view to rcat;
+
+	Grant succeeded.
+
+	SQL> alter user rcat default role all;
+
+	User altered.
+
+	SQL> GRANT RECOVERY_CATALOG_OWNER TO rcat;
+
+	Grant succeeded.
+
+	SQL>	
+	
+	
+	C:\>SET ORACLE_SID=COLDBK
+	C:\>rman catalog rcat/rcat@coldbk
+
+	Recovery Manager: Release 10.2.0.1.0 - Production on Sun Feb 15 11:27:35 2009
+
+	Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+	connected to recovery catalog database
+
+	RMAN> create catalog tablespace rcat_ts;
+
+		recovery catalog created
+
+	RMAN>exit
+
+	C:\>rman target sys/dinhvv@orcl catalog rcat/rcat@coldbk
+	Recovery Manager: Release 10.2.0.1.0 - Production on Sun Feb 15 11:33:03 2009
+	Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+	connected to target database: ORCL (DBID=1203566176)
+	connected to recovery catalog database
+
+	RMAN> register database;
+	database registered in recovery catalog
+	starting full resync of recovery catalog
+	full resync complete
+	
+	
+	RMAN> backup database;
+	
+
+	C:\Documents and Settings\inet>sqlplus
+
+	SQL*Plus: Release 10.2.0.1.0 - Production on Sun Feb 15 11:46:35 2009
+
+	Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+Enter user-name: rcat/rcat@coldbk
+
+Connected to:
+Oracle Database 10g Enterprise Edition Release 10.2.0.1.0 - Production
+With the Partitioning, OLAP and Data Mining options
+
+SQL> select tname from tab;

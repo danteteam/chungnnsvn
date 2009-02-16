@@ -1,0 +1,25 @@
+Backup Constraints
+	- The database must be mounted or open.
+	- You cannot back up online redo logs.
+	- Only “clean” backups are usable in NOARCHIVELOG mode.
+	- Only “current” data file backups are usable in ARCHIVELOG mode.
+Image Copy -> make a recovery faster
+
+---------- rman_whole_backup_script ------------
+--backup full --------
+	RMAN>run
+	{
+		crosscheck archivelog all;
+		crosscheck backupset;
+		backup database;
+		sql 'alter system archive log current';
+		backup format 'C:\backup\orcl\ar_%t_%s_%p' archivelog all delete input;
+		report obsolete;
+		delete noprompt obsolete;
+	}
+
+-------------------Run from script text file, save script above to file rnam_script.txt ----------
+	C:\>rman target / CMDFILE=C:\backup\rman_script.txt LOG=C:\backup\rman_bk.log
+	--or -------
+ 	C:\>rman target sys/123456@orcl CMDFILE=C:\backup\rman_script.txt LOG=C:\backup\rman_bk.log
+

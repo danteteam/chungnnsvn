@@ -1,0 +1,27 @@
+	Cool backup and recovery
+A. Backup datebase
+	1. Database phai trang thai shutdown Normal, Transaction, Imediate (hoac mount)
+	2. backup database (datafile, controlfile (not require tempfile, online log)), 
+		-> nen tao script de backup
+B. Recovery DB
+	1. restore parameter file (neu chua co hoac bi sai)
+	2. tao window services (windows system) theo cu phap "oradim -NEW -SID <new_db_name> -SYSPWD <password_moi"
+	3. create password file (not windows system)
+	4. restore cac file backup vao dung duong dan (neu ko dung duong dan thi phai doi ten -ALTER database rename file '<old_file_path>' to '<new_file_path>')
+	5. shutdown database hoac alter database open
+	6. open database
+C. neu ko backup tempfile, online log
+	1. create tempfile sau khi open database
+	2. recreate online log (clear online log chi duoc khi DB truoc do dc shutdown N, T, I)
+
+Backup script (Chay script tren Toad se sinh ra cac cau lenh, copy cac cau lenh do ra file .bat sau do chay file .bat)
+
+	select 'copy '||name || ' c:\backup1' from v$datafile
+	union
+	select 'copy '||name || ' c:\backup1' from v$tempfile
+	union
+	select 'copy '||member || ' c:\backup1' from v$logfile
+	union
+	select 'copy '||name || ' c:\backup1' from v$controlfile
+
+Restore script (reverse backup script)
