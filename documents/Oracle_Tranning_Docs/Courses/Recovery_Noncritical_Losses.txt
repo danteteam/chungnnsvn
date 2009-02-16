@@ -1,0 +1,13 @@
+Recovering from Noncritical Losses
+--------- delete temp file for test -----------
+	1. SQL>shutdown normal;  //shutdown DB (windows system)
+	2. delete temp file in path: "D:\oracle\product\10.2.0\oradata\ORCL\DATAFILE"
+	3. SQL>startup;
+	3. test file loss temp file?
+		- select * from big_table order by 1,2,3,4,5,6,7,8,9,10,11,12,13;
+		- ERROR at line 1: ORA-01565: error in identifying file
+		'/u01/app/oracle/oradata/orcl/temp01.dbf'
+		ORA-27037: unable to obtain file status
+-------- recovery temp file -----------
+SQL>ALTER TABLESPACE temp ADD TEMPFILE 'D:\oracle\product\10.2.0\oradata\ORCL\DATAFILE\tem2.dbf' size=20M;
+

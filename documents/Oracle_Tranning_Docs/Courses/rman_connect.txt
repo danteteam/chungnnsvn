@@ -1,0 +1,19 @@
+1. Configure RMAN to use the flash recovery area.
+	DB_RECOVERY_FILE_DEST = '/u01/oracle/fra'
+	DB_RECOVERY_FILE_DEST_SIZE = 2G
+	
+2. RMAN Usage Considerations
+	- Privileges given to users:
+		– Database: SYSDBA
+		– Operating system: Access to devices
+	- Remote operations:
+		– Set up the password file
+		– Ensure that the password file is backed up 
+3. Starting
+	- Starting RMAN locally
+		- Windows NT: 	C:\> set ORACLE_SID=DB01
+				C:\> rman target /<sysdba or user same sysdba>@<db_name>
+			exp: 	C:\>rman target sys@orcl
+
+	- Starting RMAN remotely
+		rman target sys/password@DB01
