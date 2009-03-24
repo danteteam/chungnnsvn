@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<j8583-config>
+  <!--Request message: logon as POS-->
+  <header type="0800">0800</header>
+  <parse type="0800">    
+    <field num="7" type="NUMERIC" length="10"/>     <!--Transaction Date and Time -->
+    <field num="11" type="NUMERIC" length="10" />   <!--System Trace-->
+    <field num="18" type="NUMERIC" length="4" />    <!--Merchant Type: Giá trị là 6011 đối với POS-->
+    <field num="32" type="LLVAR" length="0" />      <!--Acquiring Institution Identification Code-->    
+    <field num="48" type="LLLVAR" length="0" />     <!--Pos password admin -->
+    <field num="52" type="LLVAR" length="0" />      <!--Pos id -->
+    <field num="70" type="NUMERIC" length="3" />    <!--kiểu network request cần xử lý-	001: Signon-	002: Signoff-	161: Key Exchange-->   
+  </parse>
+  <template type="0800">
+    <field num="70" type="LLLVAR" length="0">ChungNN test</field>
+  </template>
+
+  <!--Response message: logon as POS-->
+  <header type="0810">0810</header>
+  <parse type="0810">   
+    <field num="7" type="NUMERIC" length="10"/>     <!--Transaction Date and Time -->
+    <field num="11" type="NUMERIC" length="10" />   <!--System Trace-->
+    <field num="18" type="NUMERIC" length="4" />    <!--Merchant Type: Giá trị là 6011 đối với POS-->
+    <field num="32" type="LLVAR" length="0" />      <!--Acquiring Institution Identification Code-->
+    <field num="39" type="NUMERIC" length="2" />
+    <field num="48" type="LLLVAR" length="0" />    <!--Pos password admin -->
+    <field num="52" type="LLVAR" length="0" />    <!--Pos id -->
+    <field num="70" type="NUMERIC" length="3" />    <!--kiểu network request cần xử lý-	001: Signon-	002: Signoff-	161: Key Exchange--> 
+  </parse>
+  <template type="0810">    <!--Client ID-->
+  </template>
+
+</j8583-config>

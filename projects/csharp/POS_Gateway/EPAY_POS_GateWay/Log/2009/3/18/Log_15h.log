@@ -1,0 +1,83 @@
+03:37:14:3714:PM EPAY_POS_GateWay Started (18/03/2009 03:37:14).
+03:37:14:3714:PM IP Address = 127.0.0.1
+03:37:14:3714:PM Port = 8086
+03:37:14:3714:PM test interface
+03:41:17:4117:PM EPAY_POS_GateWay Started (18/03/2009 03:41:17).
+03:41:17:4117:PM IP Address = 127.0.0.1
+03:41:17:4117:PM Port = 8086
+03:41:17:4117:PM System.NullReferenceException: Object reference not set to an instance of an object.
+   at Solab.Iso8583.Parsing.ConfigParser.CreateFromFile(String filename)
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 93
+03:41:17:4117:PM test interface
+03:41:35:4135:PM EPAY_POS_GateWay Started (18/03/2009 03:41:35).
+03:41:35:4135:PM IP Address = 127.0.0.1
+03:41:35:4135:PM Port = 8086
+03:41:35:4135:PM System.NullReferenceException: Object reference not set to an instance of an object.
+   at Solab.Iso8583.Parsing.ConfigParser.CreateFromFile(String filename)
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 93
+03:41:51:4151:PM EPAY_POS_GateWay Started (18/03/2009 03:41:51).
+03:41:51:4151:PM IP Address = 127.0.0.1
+03:41:51:4151:PM Port = 8086
+03:41:51:4151:PM System.NullReferenceException: Object reference not set to an instance of an object.
+   at Solab.Iso8583.Parsing.ConfigParser.CreateFromFile(String filename)
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 93
+03:41:51:4151:PM test interface
+03:42:07:427:PM EPAY_POS_GateWay Started (18/03/2009 03:42:07).
+03:42:07:427:PM IP Address = 127.0.0.1
+03:42:07:427:PM Port = 8086
+03:42:07:427:PM System.NullReferenceException: Object reference not set to an instance of an object.
+   at Solab.Iso8583.Parsing.ConfigParser.CreateFromFile(String filename)
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 93
+03:42:07:427:PM test interface
+03:42:37:4237:PM EPAY_POS_GateWay Started (18/03/2009 03:42:37).
+03:42:37:4237:PM IP Address = 127.0.0.1
+03:42:37:4237:PM Port = 8086
+03:42:37:4237:PM System.NullReferenceException: Object reference not set to an instance of an object.
+   at Solab.Iso8583.Parsing.ConfigParser.CreateFromFile(String filename)
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 93
+03:42:37:4237:PM test interface
+03:43:09:439:PM EPAY_POS_GateWay Started (18/03/2009 03:43:09).
+03:43:09:439:PM IP Address = 127.0.0.1
+03:43:09:439:PM Port = 8086
+03:43:09:439:PM test interface
+03:43:21:4321:PM EPAY_POS_GateWay Started (18/03/2009 03:43:21).
+03:43:21:4321:PM IP Address = 127.0.0.1
+03:43:21:4321:PM Port = 8086
+03:43:21:4321:PM test interface
+03:54:50:5450:PM Start server fail, ex=System.Net.Sockets.SocketException: The requested address is not valid in its context
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Net.Sockets.TcpListener.Start()
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 86
+03:54:50:5450:PM EPAY_POS_GateWay Started (18/03/2009 03:54:50).
+03:54:50:5450:PM IP Address = 127.0.0.1
+03:54:50:5450:PM Port = 8086
+03:54:50:5450:PM test interface
+03:55:50:5550:PM Start server fail, ex=System.Net.Sockets.SocketException: The requested address is not valid in its context
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Net.Sockets.TcpListener.Start()
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 86
+03:55:50:5550:PM EPAY_POS_GateWay Started (18/03/2009 03:55:50).
+03:55:50:5550:PM IP Address = 127.0.0.1
+03:55:50:5550:PM Port = 8086
+03:55:50:5550:PM test interface
+03:57:15:5715:PM Fail to start server, ex=System.Net.Sockets.SocketException: The requested address is not valid in its context
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at System.Net.Sockets.TcpListener.Start()
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 86
+03:57:15:5715:PM EPAY_POS_GateWay Started (18/03/2009 03:57:15).
+03:57:15:5715:PM IP Address = 127.0.0.1
+03:57:15:5715:PM Port = 8086
+03:57:15:5715:PM test interface
+03:57:16:5716:PM Fail to listen client, ex=System.InvalidOperationException: Not listening. You must call the Start() method before calling this method.
+   at System.Net.Sockets.TcpListener.AcceptTcpClient()
+   at EPAY_POS_GateWay.Server.Main(String[] args) in D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\Program.cs:line 115
+03:57:40:5740:PM EPAY_POS_GateWay Started (18/03/2009 03:57:40).
+03:57:40:5740:PM IP Address = 127.0.0.1
+03:57:40:5740:PM Port = 8086
+03:57:40:5740:PM test interface

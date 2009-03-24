@@ -1,0 +1,2079 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SignIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignInResult" type="tns:SignInResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SignInResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Channel" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SigninAsPartner">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SigninAsPartnerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SigninAsPartnerResult" type="tns:SignInResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SignOutResult" type="tns:SignOutResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SignOutResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataValue" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTokenResult" type="tns:SignInResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckConnectionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListCategoriesResult" type="tns:CategoryListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CategoryListObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryList" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BuyItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProviderObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProviderID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProviderName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MenuObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TemplateId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MenuLevel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MenuOrder" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceProvider" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MenuCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MenuName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListSubMenu" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SoldObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SoftpinId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CashierId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SoldDatetime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="StockObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceProviderName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductValue" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockQuantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CommissionRate" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CategoryObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BuyObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductValue" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Commission" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="Softpins" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LogoObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryServiceProviderId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceProvider" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PosLogo" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UpdateObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ItemType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LatestDateTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SoftpinObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SoftpinId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoftpinSerial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SoftpinPinCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ExpiryDate" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductMessageObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryServiceProviderId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceProvider" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getListProviderOfCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProviderListObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProviderList" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getListProviderOfCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListProviderOfCategoryResult" type="tns:ProviderListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListProductOfCategoryServiceProvider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProviderId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductListObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductList" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getListProductOfCategoryServiceProviderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListProductOfCategoryServiceProviderResult" type="tns:ProductListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NoneDebitDownloadSoftpin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuyItems" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BatchBuyObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionStatus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Products" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NoneDebitDownloadSoftpinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NoneDebitDownloadSoftpinResult" type="tns:BatchBuyObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="revertDownloadSoftpin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RevertResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataValue" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="revertDownloadSoftpinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="revertDownloadSoftpinResult" type="tns:RevertResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="redownloadSoftpin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="redownloadSoftpinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="redownloadSoftpinResult" type="tns:BatchBuyObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileActivate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ActivatedResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantUserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MerchantID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MobileActivateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileActivateResult" type="tns:ActivatedResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileDirectTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TargetMsIsdn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DirectResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MerchantId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MerchantBalance" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MobileDirectTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileDirectTopupResult" type="tns:DirectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileChangePassDirectTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePasswordOld" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePasswordNew" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ChangePassDirectResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MobileChangePassDirectTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileChangePassDirectTopupResult" type="tns:ChangePassDirectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileResetPassDirectTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobilePasswordNew" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResetPassDirectResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MobileResetPassDirectTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileResetPassDirectTopupResult" type="tns:ResetPassDirectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OldPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NewPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ErrorResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PartnerChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerChangePasswordResult" type="tns:ErrorResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="queryBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BalanceResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataValue" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="queryBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="queryBalanceResult" type="tns:BalanceResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerGetListCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerGetListCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerGetListCategoriesResult" type="tns:CategoryListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerGetListProviderOfCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerGetListProviderOfCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerGetListProviderOfCategoryResult" type="tns:ProviderListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerGetListProductOfCategoryServiceProvider">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProviderId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerGetListProductOfCategoryServiceProviderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerGetListProductOfCategoryServiceProviderResult" type="tns:ProductListObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProductInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProductInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product" type="tns:ProductObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductLogo" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductValue" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getProductInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProductInformationResult" type="tns:ProductInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerDownloadSoftpin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BuyItems" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="KeyBirthdayTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerDownloadSoftpinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerDownloadSoftpinResult" type="tns:BatchBuyObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerRedownloadSoftpin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="KeyBirthdayTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerRedownloadSoftpinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerRedownloadSoftpinResult" type="tns:BatchBuyObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ackDownloadSoftpin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransactionID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AckResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataValue" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ackDownloadSoftpinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ackDownloadSoftpinResult" type="tns:AckResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getListValueLevels">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LevelResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataValue" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getListValueLevelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getListValueLevelsResult" type="tns:LevelResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerDirectTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TargetMsIsdn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerDirectTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerDirectTopupResult" type="tns:DirectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PartnerAckDirectTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="transID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AckDirectResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PartnerAckDirectTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartnerAckDirectTopupResult" type="tns:AckDirectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosSynchronized">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PosAdminPass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateList" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SynchronizeResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SystemDateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="MerchantID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantUserName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogoStatus" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductMessageStatus" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AdvertisementStatus" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MenuStatus" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosSynchronizedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosSynchronizedResult" type="tns:SynchronizeResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosSynchronizedLogo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SynchronizedLogoResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogoList" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosSynchronizedLogoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosSynchronizedLogoResult" type="tns:SynchronizedLogoResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosSynchronizedMenu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SynchronizeMenuResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MenuList" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosSynchronizedMenuResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosSynchronizedMenuResult" type="tns:SynchronizeMenuResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosSynchronizedProMes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SynchronizedProductMessageResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageList" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosSynchronizedProMesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosSynchronizedProMesResult" type="tns:SynchronizedProductMessageResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosSynchronizedAd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LastUpdate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SynchronizeAdvertisementResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdList" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosSynchronizedAdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosSynchronizedAdResult" type="tns:SynchronizeAdvertisementResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosSynchronizedSoftpinKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SynchronizedKeyResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeyValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosSynchronizedSoftpinKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosSynchronizedSoftpinKeyResult" type="tns:SynchronizedKeyResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosDownloadSoftpinTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MerchantID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SoftpinStock" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosDownloadSoftpinTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosDownloadSoftpinTemplateResult" type="tns:BatchBuyObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosDownloadSingleSoftpin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MerchantID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceProviderName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProductValue" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StockQuantity" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DownloadQuantity" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosDownloadSingleSoftpinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosDownloadSingleSoftpinResult" type="tns:BatchBuyObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosRevertDownload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PosId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosRevertDownloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosRevertDownloadResult" type="tns:ErrorResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosRecountTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SoldSoftpin" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SettleResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRecountedSoftpin" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosRecountTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosRecountTransResult" type="tns:SettleResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosReturnStocked">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnList" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ReturnPosSoftpinResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalRefund" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalReturn" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PosReturnStockedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosReturnStockedResult" type="tns:ReturnPosSoftpinResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosLogon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PosAdminPass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosLogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosLogonResult" type="tns:ErrorResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosDirectTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TargetMsIsdn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RequestID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PosID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PosDirectTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PosDirectTopupResult" type="tns:DirectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SignInSoapIn">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="SignInSoapOut">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="SigninAsPartnerSoapIn">
+    <wsdl:part name="parameters" element="tns:SigninAsPartner" />
+  </wsdl:message>
+  <wsdl:message name="SigninAsPartnerSoapOut">
+    <wsdl:part name="parameters" element="tns:SigninAsPartnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignOutSoapIn">
+    <wsdl:part name="parameters" element="tns:SignOut" />
+  </wsdl:message>
+  <wsdl:message name="SignOutSoapOut">
+    <wsdl:part name="parameters" element="tns:SignOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetToken" />
+  </wsdl:message>
+  <wsdl:message name="GetTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckConnection" />
+  </wsdl:message>
+  <wsdl:message name="CheckConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:getListCategories" />
+  </wsdl:message>
+  <wsdl:message name="getListCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:getListCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListProviderOfCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:getListProviderOfCategory" />
+  </wsdl:message>
+  <wsdl:message name="getListProviderOfCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:getListProviderOfCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListProductOfCategoryServiceProviderSoapIn">
+    <wsdl:part name="parameters" element="tns:getListProductOfCategoryServiceProvider" />
+  </wsdl:message>
+  <wsdl:message name="getListProductOfCategoryServiceProviderSoapOut">
+    <wsdl:part name="parameters" element="tns:getListProductOfCategoryServiceProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="NoneDebitDownloadSoftpinSoapIn">
+    <wsdl:part name="parameters" element="tns:NoneDebitDownloadSoftpin" />
+  </wsdl:message>
+  <wsdl:message name="NoneDebitDownloadSoftpinSoapOut">
+    <wsdl:part name="parameters" element="tns:NoneDebitDownloadSoftpinResponse" />
+  </wsdl:message>
+  <wsdl:message name="revertDownloadSoftpinSoapIn">
+    <wsdl:part name="parameters" element="tns:revertDownloadSoftpin" />
+  </wsdl:message>
+  <wsdl:message name="revertDownloadSoftpinSoapOut">
+    <wsdl:part name="parameters" element="tns:revertDownloadSoftpinResponse" />
+  </wsdl:message>
+  <wsdl:message name="redownloadSoftpinSoapIn">
+    <wsdl:part name="parameters" element="tns:redownloadSoftpin" />
+  </wsdl:message>
+  <wsdl:message name="redownloadSoftpinSoapOut">
+    <wsdl:part name="parameters" element="tns:redownloadSoftpinResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileActivateSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileActivate" />
+  </wsdl:message>
+  <wsdl:message name="MobileActivateSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileActivateResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileDirectTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileDirectTopup" />
+  </wsdl:message>
+  <wsdl:message name="MobileDirectTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileDirectTopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileChangePassDirectTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileChangePassDirectTopup" />
+  </wsdl:message>
+  <wsdl:message name="MobileChangePassDirectTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileChangePassDirectTopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileResetPassDirectTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileResetPassDirectTopup" />
+  </wsdl:message>
+  <wsdl:message name="MobileResetPassDirectTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileResetPassDirectTopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="PartnerChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:queryBalance" />
+  </wsdl:message>
+  <wsdl:message name="queryBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:queryBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerGetListCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerGetListCategories" />
+  </wsdl:message>
+  <wsdl:message name="PartnerGetListCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerGetListCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerGetListProviderOfCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerGetListProviderOfCategory" />
+  </wsdl:message>
+  <wsdl:message name="PartnerGetListProviderOfCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerGetListProviderOfCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerGetListProductOfCategoryServiceProviderSoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerGetListProductOfCategoryServiceProvider" />
+  </wsdl:message>
+  <wsdl:message name="PartnerGetListProductOfCategoryServiceProviderSoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerGetListProductOfCategoryServiceProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProductInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:getProductInformation" />
+  </wsdl:message>
+  <wsdl:message name="getProductInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:getProductInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerDownloadSoftpinSoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerDownloadSoftpin" />
+  </wsdl:message>
+  <wsdl:message name="PartnerDownloadSoftpinSoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerDownloadSoftpinResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerRedownloadSoftpinSoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerRedownloadSoftpin" />
+  </wsdl:message>
+  <wsdl:message name="PartnerRedownloadSoftpinSoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerRedownloadSoftpinResponse" />
+  </wsdl:message>
+  <wsdl:message name="ackDownloadSoftpinSoapIn">
+    <wsdl:part name="parameters" element="tns:ackDownloadSoftpin" />
+  </wsdl:message>
+  <wsdl:message name="ackDownloadSoftpinSoapOut">
+    <wsdl:part name="parameters" element="tns:ackDownloadSoftpinResponse" />
+  </wsdl:message>
+  <wsdl:message name="getListValueLevelsSoapIn">
+    <wsdl:part name="parameters" element="tns:getListValueLevels" />
+  </wsdl:message>
+  <wsdl:message name="getListValueLevelsSoapOut">
+    <wsdl:part name="parameters" element="tns:getListValueLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerDirectTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerDirectTopup" />
+  </wsdl:message>
+  <wsdl:message name="PartnerDirectTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerDirectTopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="PartnerAckDirectTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:PartnerAckDirectTopup" />
+  </wsdl:message>
+  <wsdl:message name="PartnerAckDirectTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:PartnerAckDirectTopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedSoapIn">
+    <wsdl:part name="parameters" element="tns:PosSynchronized" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedSoapOut">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedLogoSoapIn">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedLogo" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedLogoSoapOut">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedLogoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedMenuSoapIn">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedMenu" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedMenuSoapOut">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedProMesSoapIn">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedProMes" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedProMesSoapOut">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedProMesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedAdSoapIn">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedAd" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedAdSoapOut">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedSoftpinKeySoapIn">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedSoftpinKey" />
+  </wsdl:message>
+  <wsdl:message name="PosSynchronizedSoftpinKeySoapOut">
+    <wsdl:part name="parameters" element="tns:PosSynchronizedSoftpinKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosDownloadSoftpinTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:PosDownloadSoftpinTemplate" />
+  </wsdl:message>
+  <wsdl:message name="PosDownloadSoftpinTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:PosDownloadSoftpinTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosDownloadSingleSoftpinSoapIn">
+    <wsdl:part name="parameters" element="tns:PosDownloadSingleSoftpin" />
+  </wsdl:message>
+  <wsdl:message name="PosDownloadSingleSoftpinSoapOut">
+    <wsdl:part name="parameters" element="tns:PosDownloadSingleSoftpinResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosRevertDownloadSoapIn">
+    <wsdl:part name="parameters" element="tns:PosRevertDownload" />
+  </wsdl:message>
+  <wsdl:message name="PosRevertDownloadSoapOut">
+    <wsdl:part name="parameters" element="tns:PosRevertDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosRecountTransSoapIn">
+    <wsdl:part name="parameters" element="tns:PosRecountTrans" />
+  </wsdl:message>
+  <wsdl:message name="PosRecountTransSoapOut">
+    <wsdl:part name="parameters" element="tns:PosRecountTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosReturnStockedSoapIn">
+    <wsdl:part name="parameters" element="tns:PosReturnStocked" />
+  </wsdl:message>
+  <wsdl:message name="PosReturnStockedSoapOut">
+    <wsdl:part name="parameters" element="tns:PosReturnStockedResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosLogonSoapIn">
+    <wsdl:part name="parameters" element="tns:PosLogon" />
+  </wsdl:message>
+  <wsdl:message name="PosLogonSoapOut">
+    <wsdl:part name="parameters" element="tns:PosLogonResponse" />
+  </wsdl:message>
+  <wsdl:message name="PosDirectTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:PosDirectTopup" />
+  </wsdl:message>
+  <wsdl:message name="PosDirectTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:PosDirectTopupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="SignIn">
+      <wsdl:input message="tns:SignInSoapIn" />
+      <wsdl:output message="tns:SignInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SigninAsPartner">
+      <wsdl:input message="tns:SigninAsPartnerSoapIn" />
+      <wsdl:output message="tns:SigninAsPartnerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignOut">
+      <wsdl:input message="tns:SignOutSoapIn" />
+      <wsdl:output message="tns:SignOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <wsdl:input message="tns:GetTokenSoapIn" />
+      <wsdl:output message="tns:GetTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <wsdl:input message="tns:CheckConnectionSoapIn" />
+      <wsdl:output message="tns:CheckConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListCategories">
+      <wsdl:input message="tns:getListCategoriesSoapIn" />
+      <wsdl:output message="tns:getListCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListProviderOfCategory">
+      <wsdl:input message="tns:getListProviderOfCategorySoapIn" />
+      <wsdl:output message="tns:getListProviderOfCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListProductOfCategoryServiceProvider">
+      <wsdl:input message="tns:getListProductOfCategoryServiceProviderSoapIn" />
+      <wsdl:output message="tns:getListProductOfCategoryServiceProviderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NoneDebitDownloadSoftpin">
+      <wsdl:input message="tns:NoneDebitDownloadSoftpinSoapIn" />
+      <wsdl:output message="tns:NoneDebitDownloadSoftpinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="revertDownloadSoftpin">
+      <wsdl:input message="tns:revertDownloadSoftpinSoapIn" />
+      <wsdl:output message="tns:revertDownloadSoftpinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="redownloadSoftpin">
+      <wsdl:input message="tns:redownloadSoftpinSoapIn" />
+      <wsdl:output message="tns:redownloadSoftpinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileActivate">
+      <wsdl:input message="tns:MobileActivateSoapIn" />
+      <wsdl:output message="tns:MobileActivateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileDirectTopup">
+      <wsdl:input message="tns:MobileDirectTopupSoapIn" />
+      <wsdl:output message="tns:MobileDirectTopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileChangePassDirectTopup">
+      <wsdl:input message="tns:MobileChangePassDirectTopupSoapIn" />
+      <wsdl:output message="tns:MobileChangePassDirectTopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileResetPassDirectTopup">
+      <wsdl:input message="tns:MobileResetPassDirectTopupSoapIn" />
+      <wsdl:output message="tns:MobileResetPassDirectTopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerChangePassword">
+      <wsdl:input message="tns:PartnerChangePasswordSoapIn" />
+      <wsdl:output message="tns:PartnerChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="queryBalance">
+      <wsdl:input message="tns:queryBalanceSoapIn" />
+      <wsdl:output message="tns:queryBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListCategories">
+      <wsdl:input message="tns:PartnerGetListCategoriesSoapIn" />
+      <wsdl:output message="tns:PartnerGetListCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListProviderOfCategory">
+      <wsdl:input message="tns:PartnerGetListProviderOfCategorySoapIn" />
+      <wsdl:output message="tns:PartnerGetListProviderOfCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListProductOfCategoryServiceProvider">
+      <wsdl:input message="tns:PartnerGetListProductOfCategoryServiceProviderSoapIn" />
+      <wsdl:output message="tns:PartnerGetListProductOfCategoryServiceProviderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductInformation">
+      <wsdl:input message="tns:getProductInformationSoapIn" />
+      <wsdl:output message="tns:getProductInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerDownloadSoftpin">
+      <wsdl:input message="tns:PartnerDownloadSoftpinSoapIn" />
+      <wsdl:output message="tns:PartnerDownloadSoftpinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerRedownloadSoftpin">
+      <wsdl:input message="tns:PartnerRedownloadSoftpinSoapIn" />
+      <wsdl:output message="tns:PartnerRedownloadSoftpinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ackDownloadSoftpin">
+      <wsdl:input message="tns:ackDownloadSoftpinSoapIn" />
+      <wsdl:output message="tns:ackDownloadSoftpinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getListValueLevels">
+      <wsdl:input message="tns:getListValueLevelsSoapIn" />
+      <wsdl:output message="tns:getListValueLevelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerDirectTopup">
+      <wsdl:input message="tns:PartnerDirectTopupSoapIn" />
+      <wsdl:output message="tns:PartnerDirectTopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PartnerAckDirectTopup">
+      <wsdl:input message="tns:PartnerAckDirectTopupSoapIn" />
+      <wsdl:output message="tns:PartnerAckDirectTopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronized">
+      <wsdl:input message="tns:PosSynchronizedSoapIn" />
+      <wsdl:output message="tns:PosSynchronizedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedLogo">
+      <wsdl:input message="tns:PosSynchronizedLogoSoapIn" />
+      <wsdl:output message="tns:PosSynchronizedLogoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedMenu">
+      <wsdl:input message="tns:PosSynchronizedMenuSoapIn" />
+      <wsdl:output message="tns:PosSynchronizedMenuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedProMes">
+      <wsdl:input message="tns:PosSynchronizedProMesSoapIn" />
+      <wsdl:output message="tns:PosSynchronizedProMesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedAd">
+      <wsdl:input message="tns:PosSynchronizedAdSoapIn" />
+      <wsdl:output message="tns:PosSynchronizedAdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedSoftpinKey">
+      <wsdl:input message="tns:PosSynchronizedSoftpinKeySoapIn" />
+      <wsdl:output message="tns:PosSynchronizedSoftpinKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosDownloadSoftpinTemplate">
+      <wsdl:input message="tns:PosDownloadSoftpinTemplateSoapIn" />
+      <wsdl:output message="tns:PosDownloadSoftpinTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosDownloadSingleSoftpin">
+      <wsdl:input message="tns:PosDownloadSingleSoftpinSoapIn" />
+      <wsdl:output message="tns:PosDownloadSingleSoftpinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosRevertDownload">
+      <wsdl:input message="tns:PosRevertDownloadSoapIn" />
+      <wsdl:output message="tns:PosRevertDownloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosRecountTrans">
+      <wsdl:input message="tns:PosRecountTransSoapIn" />
+      <wsdl:output message="tns:PosRecountTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosReturnStocked">
+      <wsdl:input message="tns:PosReturnStockedSoapIn" />
+      <wsdl:output message="tns:PosReturnStockedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosLogon">
+      <wsdl:input message="tns:PosLogonSoapIn" />
+      <wsdl:output message="tns:PosLogonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PosDirectTopup">
+      <wsdl:input message="tns:PosDirectTopupSoapIn" />
+      <wsdl:output message="tns:PosDirectTopupSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="http://tempuri.org/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SigninAsPartner">
+      <soap:operation soapAction="http://tempuri.org/SigninAsPartner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignOut">
+      <soap:operation soapAction="http://tempuri.org/SignOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <soap:operation soapAction="http://tempuri.org/GetToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <soap:operation soapAction="http://tempuri.org/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListCategories">
+      <soap:operation soapAction="http://tempuri.org/getListCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListProviderOfCategory">
+      <soap:operation soapAction="http://tempuri.org/getListProviderOfCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListProductOfCategoryServiceProvider">
+      <soap:operation soapAction="http://tempuri.org/getListProductOfCategoryServiceProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoneDebitDownloadSoftpin">
+      <soap:operation soapAction="http://tempuri.org/NoneDebitDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="revertDownloadSoftpin">
+      <soap:operation soapAction="http://tempuri.org/revertDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="redownloadSoftpin">
+      <soap:operation soapAction="http://tempuri.org/redownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileActivate">
+      <soap:operation soapAction="http://tempuri.org/MobileActivate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileDirectTopup">
+      <soap:operation soapAction="http://tempuri.org/MobileDirectTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileChangePassDirectTopup">
+      <soap:operation soapAction="http://tempuri.org/MobileChangePassDirectTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileResetPassDirectTopup">
+      <soap:operation soapAction="http://tempuri.org/MobileResetPassDirectTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerChangePassword">
+      <soap:operation soapAction="http://tempuri.org/PartnerChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryBalance">
+      <soap:operation soapAction="http://tempuri.org/queryBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListCategories">
+      <soap:operation soapAction="http://tempuri.org/PartnerGetListCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListProviderOfCategory">
+      <soap:operation soapAction="http://tempuri.org/PartnerGetListProviderOfCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListProductOfCategoryServiceProvider">
+      <soap:operation soapAction="http://tempuri.org/PartnerGetListProductOfCategoryServiceProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductInformation">
+      <soap:operation soapAction="http://tempuri.org/getProductInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerDownloadSoftpin">
+      <soap:operation soapAction="http://tempuri.org/PartnerDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerRedownloadSoftpin">
+      <soap:operation soapAction="http://tempuri.org/PartnerRedownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ackDownloadSoftpin">
+      <soap:operation soapAction="http://tempuri.org/ackDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListValueLevels">
+      <soap:operation soapAction="http://tempuri.org/getListValueLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerDirectTopup">
+      <soap:operation soapAction="http://tempuri.org/PartnerDirectTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerAckDirectTopup">
+      <soap:operation soapAction="http://tempuri.org/PartnerAckDirectTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronized">
+      <soap:operation soapAction="http://tempuri.org/PosSynchronized" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedLogo">
+      <soap:operation soapAction="http://tempuri.org/PosSynchronizedLogo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedMenu">
+      <soap:operation soapAction="http://tempuri.org/PosSynchronizedMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedProMes">
+      <soap:operation soapAction="http://tempuri.org/PosSynchronizedProMes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedAd">
+      <soap:operation soapAction="http://tempuri.org/PosSynchronizedAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedSoftpinKey">
+      <soap:operation soapAction="http://tempuri.org/PosSynchronizedSoftpinKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosDownloadSoftpinTemplate">
+      <soap:operation soapAction="http://tempuri.org/PosDownloadSoftpinTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosDownloadSingleSoftpin">
+      <soap:operation soapAction="http://tempuri.org/PosDownloadSingleSoftpin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosRevertDownload">
+      <soap:operation soapAction="http://tempuri.org/PosRevertDownload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosRecountTrans">
+      <soap:operation soapAction="http://tempuri.org/PosRecountTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosReturnStocked">
+      <soap:operation soapAction="http://tempuri.org/PosReturnStocked" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosLogon">
+      <soap:operation soapAction="http://tempuri.org/PosLogon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosDirectTopup">
+      <soap:operation soapAction="http://tempuri.org/PosDirectTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignIn">
+      <soap12:operation soapAction="http://tempuri.org/SignIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SigninAsPartner">
+      <soap12:operation soapAction="http://tempuri.org/SigninAsPartner" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignOut">
+      <soap12:operation soapAction="http://tempuri.org/SignOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToken">
+      <soap12:operation soapAction="http://tempuri.org/GetToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <soap12:operation soapAction="http://tempuri.org/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListCategories">
+      <soap12:operation soapAction="http://tempuri.org/getListCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListProviderOfCategory">
+      <soap12:operation soapAction="http://tempuri.org/getListProviderOfCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListProductOfCategoryServiceProvider">
+      <soap12:operation soapAction="http://tempuri.org/getListProductOfCategoryServiceProvider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoneDebitDownloadSoftpin">
+      <soap12:operation soapAction="http://tempuri.org/NoneDebitDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="revertDownloadSoftpin">
+      <soap12:operation soapAction="http://tempuri.org/revertDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="redownloadSoftpin">
+      <soap12:operation soapAction="http://tempuri.org/redownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileActivate">
+      <soap12:operation soapAction="http://tempuri.org/MobileActivate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileDirectTopup">
+      <soap12:operation soapAction="http://tempuri.org/MobileDirectTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileChangePassDirectTopup">
+      <soap12:operation soapAction="http://tempuri.org/MobileChangePassDirectTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileResetPassDirectTopup">
+      <soap12:operation soapAction="http://tempuri.org/MobileResetPassDirectTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/PartnerChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryBalance">
+      <soap12:operation soapAction="http://tempuri.org/queryBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListCategories">
+      <soap12:operation soapAction="http://tempuri.org/PartnerGetListCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListProviderOfCategory">
+      <soap12:operation soapAction="http://tempuri.org/PartnerGetListProviderOfCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerGetListProductOfCategoryServiceProvider">
+      <soap12:operation soapAction="http://tempuri.org/PartnerGetListProductOfCategoryServiceProvider" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductInformation">
+      <soap12:operation soapAction="http://tempuri.org/getProductInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerDownloadSoftpin">
+      <soap12:operation soapAction="http://tempuri.org/PartnerDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerRedownloadSoftpin">
+      <soap12:operation soapAction="http://tempuri.org/PartnerRedownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ackDownloadSoftpin">
+      <soap12:operation soapAction="http://tempuri.org/ackDownloadSoftpin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getListValueLevels">
+      <soap12:operation soapAction="http://tempuri.org/getListValueLevels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerDirectTopup">
+      <soap12:operation soapAction="http://tempuri.org/PartnerDirectTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PartnerAckDirectTopup">
+      <soap12:operation soapAction="http://tempuri.org/PartnerAckDirectTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronized">
+      <soap12:operation soapAction="http://tempuri.org/PosSynchronized" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedLogo">
+      <soap12:operation soapAction="http://tempuri.org/PosSynchronizedLogo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedMenu">
+      <soap12:operation soapAction="http://tempuri.org/PosSynchronizedMenu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedProMes">
+      <soap12:operation soapAction="http://tempuri.org/PosSynchronizedProMes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedAd">
+      <soap12:operation soapAction="http://tempuri.org/PosSynchronizedAd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosSynchronizedSoftpinKey">
+      <soap12:operation soapAction="http://tempuri.org/PosSynchronizedSoftpinKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosDownloadSoftpinTemplate">
+      <soap12:operation soapAction="http://tempuri.org/PosDownloadSoftpinTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosDownloadSingleSoftpin">
+      <soap12:operation soapAction="http://tempuri.org/PosDownloadSingleSoftpin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosRevertDownload">
+      <soap12:operation soapAction="http://tempuri.org/PosRevertDownload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosRecountTrans">
+      <soap12:operation soapAction="http://tempuri.org/PosRecountTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosReturnStocked">
+      <soap12:operation soapAction="http://tempuri.org/PosReturnStocked" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosLogon">
+      <soap12:operation soapAction="http://tempuri.org/PosLogon" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PosDirectTopup">
+      <soap12:operation soapAction="http://tempuri.org/PosDirectTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://203.162.14.229:8084/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://203.162.14.229:8084/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
