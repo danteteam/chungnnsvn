@@ -1,0 +1,5 @@
+03:49:32:4932:PM Login successfull., username=itopup, IP=127.0.0.1
+03:49:57:4957:PM Login EPay sucessfull. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+03:49:58:4958:PM load on Viettel failure. ( MerchantID=4561321, targetMsIsdn=0983160277, amount=10000 ) 
+03:50:13:5013:PM Load failure, request_id is exist. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+03:50:13:5013:PM load on Viettel successfull. ( MerchantID=4561321,  targetMsIsdn=0983160277, amount=10000 )

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.utiba.com/delirium/ws/StdQuery" elementFormDefault="qualified" targetNamespace="http://www.utiba.com/delirium/ws/StdQuery" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="querytoolRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardQueryRequest">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="queryTables" type="tns:SOAPQueryTable" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="standardQueryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sessionid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SOAPQueryTable">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element minOccurs="0" default="1:M" name="multiplicity" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="fields" nillable="true" type="tns:SOAPQueryField" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tables" nillable="true" type="tns:SOAPQueryTable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SOAPQueryField">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="select" type="xs:boolean" />
+      <xs:element minOccurs="0" name="operation" type="xs:string" />
+      <xs:element minOccurs="0" name="sort" type="xs:int" />
+      <xs:element minOccurs="0" name="filterOperator" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="filterValues" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="querytoolResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="queryResult" type="tns:SOAPQueryResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="standardQueryResponse">
+    <xs:sequence>
+      <xs:element name="result" type="xs:int" />
+      <xs:element name="result_namespace" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SOAPQueryResult">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="columns" type="tns:SOAPQueryColumn" />
+      <xs:element maxOccurs="unbounded" name="rows" type="tns:SOAPQueryRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SOAPQueryColumn">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="type" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SOAPQueryRow">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="values" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dummy" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

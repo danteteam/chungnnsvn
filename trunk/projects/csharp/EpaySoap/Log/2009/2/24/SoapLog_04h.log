@@ -1,0 +1,13 @@
+04:12:41:1241:PM Load fail, invalid user name or session_id. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+04:13:07:137:PM Load fail, invalid user name or session_id. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+04:13:14:1314:PM Load fail, invalid user name or session_id. (RequestID=1234563, UserName=itopup, IPAddress=127.0.0.1)
+04:13:22:1322:PM Load fail, invalid user name or session_id. (RequestID=1234563, UserName=itopup, IPAddress=127.0.0.1)
+04:13:25:1325:PM Load fail, invalid user name or session_id. (RequestID=1234563, UserName=itopup, IPAddress=127.0.0.1)
+04:13:50:1350:PM Load fail, invalid user name or session_id. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+04:13:58:1358:PM Login successfull., username=itopup, IP=127.0.0.1
+04:14:14:1414:PM Load failure, ivalid amount. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+04:14:14:1414:PM load on Viettel successfull. ( MerchantID=123456,  targetMsIsdn=0983160277, amount=1000 )
+04:15:04:154:PM Load failure, ivalid amount. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+04:15:04:154:PM load on Viettel successfull. ( MerchantID=123456,  targetMsIsdn=0983160277, amount=1000 )
+04:15:18:1518:PM Load failure, ivalid amount. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+04:15:18:1518:PM load on Viettel successfull. ( MerchantID=123456,  targetMsIsdn=0983160277, amount=1000 )

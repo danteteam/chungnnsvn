@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "E:\...\Sources 2\", "..\Sources 2", "{EDD5B73F-E6F4-4770-A269-C83C0E4E74EE}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/Projects/Direct Topup/Sources/Sources 2.0", NEAAAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		Debug.AspNetCompiler.VirtualPath = "/Sources 2"
+		Debug.AspNetCompiler.PhysicalPath = "E:\Working\Projects\EPaySoap\Sources 2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Sources 2\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Sources 2"
+		Release.AspNetCompiler.PhysicalPath = "E:\Working\Projects\EPaySoap\Sources 2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Sources 2\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2416"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccWebProject0 = true
+		SccProjectUniqueName0 = .
+		SccProjectName0 = \u0022$/Projects/Direct\u0020Topup/Sources/Sources\u00202.0\u0022,\u0020NEAAAAAA
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectEnlistmentChoice0 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDD5B73F-E6F4-4770-A269-C83C0E4E74EE}.Debug|.NET.ActiveCfg = Debug|.NET
+		{EDD5B73F-E6F4-4770-A269-C83C0E4E74EE}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

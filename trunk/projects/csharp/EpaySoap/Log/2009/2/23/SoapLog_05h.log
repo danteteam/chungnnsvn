@@ -1,0 +1,44 @@
+05:00:07:07:PM Login fail, invalid username or password, username=itopup, IP=127.0.0.1
+05:00:10:010:PM Login successfull., username=itopup, IP=127.0.0.1
+05:00:30:030:PM Login EPay sucessfull. (RequestID=request11, UserName=itopup, IPAddress=127.0.0.1)
+05:00:31:031:PM load on Viettel successfull. ( MerchantID=011,  targetMsIsdn=0983160277, amount=10000 )
+05:01:39:139:PM Login EPay sucessfull. (RequestID=request12, UserName=itopup, IPAddress=127.0.0.1)
+05:02:05:25:PM load on Viettel successfull. ( MerchantID=012,  targetMsIsdn=0983160277, amount=10000 )
+05:03:00:30:PM Load fail, invalid user name or session_id. (RequestID=request13, UserName=itopup, IPAddress=127.0.0.1)
+05:03:15:315:PM Login successfull., username=itopup, IP=127.0.0.1
+05:03:23:323:PM Login EPay sucessfull. (RequestID=request13, UserName=itopup, IPAddress=127.0.0.1)
+05:03:53:353:PM load on Viettel successfull. ( MerchantID=013,  targetMsIsdn=0983160277, amount=10000 )
+05:11:14:1114:PM Login successfull., username=itopup, IP=127.0.0.1
+05:11:34:1134:PM Login EPay sucessfull. (RequestID=request14, UserName=itopup, IPAddress=127.0.0.1)
+05:11:53:1153:PM load on Viettel successfull. ( MerchantID=014,  targetMsIsdn=0983160277, amount=10000 )
+05:13:47:1347:PM Login successfull., username=itopup, IP=127.0.0.1
+05:14:09:149:PM Load failure, ivalid amount. (RequestID=3463, UserName=itopup, IPAddress=127.0.0.1)
+05:14:14:1414:PM Login EPay sucessfull. (RequestID=3463, UserName=itopup, IPAddress=127.0.0.1)
+05:14:15:1415:PM load on Viettel successfull. ( MerchantID=3464,  targetMsIsdn=0983160277, amount=10000 )
+05:21:40:2140:PM Login fail, invalid username or password, username=itopup, IP=127.0.0.1
+05:21:44:2144:PM Login successfull., username=itopup, IP=127.0.0.1
+05:22:07:227:PM Login EPay sucessfull. (RequestID=16465, UserName=itopup, IPAddress=127.0.0.1)
+05:33:25:3325:PM Login successfull., username=itopup, IP=127.0.0.1
+05:33:40:3340:PM Login EPay sucessfull. (RequestID=132456, UserName=itopup, IPAddress=127.0.0.1)
+05:43:53:4353:PM Login successfull., username=itopup, IP=127.0.0.1
+05:44:16:4416:PM Login EPay sucessfull. (RequestID=12456, UserName=itopup, IPAddress=127.0.0.1)
+05:45:19:4519:PM load on Viettel ( targetMsIsdn=0983160277, amount = 10000 ) failure.
+Exception=System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. ---> System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at EPaySoap.TransferProcess.ViettelLoad(String MerchantID, String targetMsIsdn, Double amount) in e:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 121
+   at EPaySoap.Security.load(String UserName, String Session_ID, String Request_ID, String MerchantID, String targetMsIsdn, Int32 amount) in e:\Working\Projects\EPaySoap\Sources 2\App_Code\Security.cs:line 773
+05:46:04:464:PM Login successfull., username=itopup, IP=127.0.0.1
+05:46:18:4618:PM Login EPay sucessfull. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)
+05:46:45:4645:PM load on Viettel ( targetMsIsdn=0983160277, amount = 10000 ) failure.
+Exception=System.IO.IOException: Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host. ---> System.Net.Sockets.SocketException: An existing connection was forcibly closed by the remote host
+   at System.Net.Sockets.Socket.Receive(Byte[] buffer, Int32 offset, Int32 size, SocketFlags socketFlags)
+   at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   --- End of inner exception stack trace ---
+   at EPaySoap.TransferProcess.ViettelLoad(String MerchantID, String targetMsIsdn, Double amount) in e:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 121
+   at EPaySoap.Security.load(String UserName, String Session_ID, String Request_ID, String MerchantID, String targetMsIsdn, Int32 amount) in e:\Working\Projects\EPaySoap\Sources 2\App_Code\Security.cs:line 773
+05:48:32:4832:PM Load fail, invalid user name or session_id. (RequestID=ture, UserName=sdyhs, IPAddress=127.0.0.1)
+05:48:41:4841:PM Load fail, invalid user name or session_id. (RequestID=ture, UserName=sdyhs, IPAddress=127.0.0.1)
+05:48:55:4855:PM Login successfull., username=itopup, IP=127.0.0.1
+05:49:12:4912:PM Login EPay sucessfull. (RequestID=123456, UserName=itopup, IPAddress=127.0.0.1)

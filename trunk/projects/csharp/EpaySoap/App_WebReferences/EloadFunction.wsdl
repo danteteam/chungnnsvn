@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:intf="http://mwallet.fss.com" xmlns:impl="http://mwallet.fss.com" targetNamespace="http://mwallet.fss.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://mwallet.fss.com">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:complexType name="TransactionInput">
+        <xsd:sequence>
+          <xsd:element name="username" nillable="true" type="xsd:string" />
+          <xsd:element name="password" nillable="true" type="xsd:string" />
+          <xsd:element name="agentMsIsdn" nillable="true" type="xsd:string" />
+          <xsd:element name="targetMsIsdn" nillable="true" type="xsd:string" />
+          <xsd:element name="amount" type="xsd:double" />
+          <xsd:element name="counter" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EnquiryOutput">
+        <xsd:sequence>
+          <xsd:element name="status" nillable="true" type="xsd:string" />
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+          <xsd:element name="transId" nillable="true" type="xsd:string" />
+          <xsd:element name="remainAmount" type="xsd:double" />
+          <xsd:element name="totalAmount" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BasicInput">
+        <xsd:sequence>
+          <xsd:element name="username" nillable="true" type="xsd:string" />
+          <xsd:element name="password" nillable="true" type="xsd:string" />
+          <xsd:element name="agentMsIsdn" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LoginOutput">
+        <xsd:sequence>
+          <xsd:element name="status" nillable="true" type="xsd:string" />
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+          <xsd:element name="sessionid" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BasicOutput">
+        <xsd:sequence>
+          <xsd:element name="transId" nillable="true" type="xsd:string" />
+          <xsd:element name="status" nillable="true" type="xsd:string" />
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ChangeInput">
+        <xsd:sequence>
+          <xsd:element name="username" nillable="true" type="xsd:string" />
+          <xsd:element name="oldPassword" nillable="true" type="xsd:string" />
+          <xsd:element name="agentMsIsdn" nillable="true" type="xsd:string" />
+          <xsd:element name="newPassword" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="logoutRequest">
+    <wsdl:part name="sessionId" type="soapenc:string" />
+  </wsdl:message>
+  <wsdl:message name="today_enquiryRequest">
+    <wsdl:part name="in" type="impl:BasicInput" />
+  </wsdl:message>
+  <wsdl:message name="stock_enquiryRequest">
+    <wsdl:part name="in" type="impl:BasicInput" />
+  </wsdl:message>
+  <wsdl:message name="change_mpinResponse">
+    <wsdl:part name="change_mpinReturn" type="impl:BasicOutput" />
+  </wsdl:message>
+  <wsdl:message name="loadRequest">
+    <wsdl:part name="in" type="impl:TransactionInput" />
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part name="loginReturn" type="impl:LoginOutput" />
+  </wsdl:message>
+  <wsdl:message name="today_enquiryResponse">
+    <wsdl:part name="today_enquiryReturn" type="impl:EnquiryOutput" />
+  </wsdl:message>
+  <wsdl:message name="change_mpinRequest">
+    <wsdl:part name="in" type="impl:ChangeInput" />
+  </wsdl:message>
+  <wsdl:message name="stock_transferRequest">
+    <wsdl:part name="in" type="impl:TransactionInput" />
+  </wsdl:message>
+  <wsdl:message name="change_passwordResponse">
+    <wsdl:part name="change_passwordReturn" type="impl:BasicOutput" />
+  </wsdl:message>
+  <wsdl:message name="stock_transferResponse">
+    <wsdl:part name="stock_transferReturn" type="impl:EnquiryOutput" />
+  </wsdl:message>
+  <wsdl:message name="logoutResponse">
+    <wsdl:part name="logoutReturn" type="impl:BasicOutput" />
+  </wsdl:message>
+  <wsdl:message name="loadResponse">
+    <wsdl:part name="loadReturn" type="impl:EnquiryOutput" />
+  </wsdl:message>
+  <wsdl:message name="loginRequest">
+    <wsdl:part name="in" type="impl:BasicInput" />
+  </wsdl:message>
+  <wsdl:message name="change_passwordRequest">
+    <wsdl:part name="in" type="impl:ChangeInput" />
+  </wsdl:message>
+  <wsdl:message name="stock_enquiryResponse">
+    <wsdl:part name="stock_enquiryReturn" type="impl:EnquiryOutput" />
+  </wsdl:message>
+  <wsdl:portType name="EloadFunction">
+    <wsdl:operation name="load" parameterOrder="in">
+      <wsdl:input name="loadRequest" message="impl:loadRequest" />
+      <wsdl:output name="loadResponse" message="impl:loadResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="login" parameterOrder="in">
+      <wsdl:input name="loginRequest" message="impl:loginRequest" />
+      <wsdl:output name="loginResponse" message="impl:loginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="logout" parameterOrder="sessionId">
+      <wsdl:input name="logoutRequest" message="impl:logoutRequest" />
+      <wsdl:output name="logoutResponse" message="impl:logoutResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="change_password" parameterOrder="in">
+      <wsdl:input name="change_passwordRequest" message="impl:change_passwordRequest" />
+      <wsdl:output name="change_passwordResponse" message="impl:change_passwordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="change_mpin" parameterOrder="in">
+      <wsdl:input name="change_mpinRequest" message="impl:change_mpinRequest" />
+      <wsdl:output name="change_mpinResponse" message="impl:change_mpinResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="stock_enquiry" parameterOrder="in">
+      <wsdl:input name="stock_enquiryRequest" message="impl:stock_enquiryRequest" />
+      <wsdl:output name="stock_enquiryResponse" message="impl:stock_enquiryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="today_enquiry" parameterOrder="in">
+      <wsdl:input name="today_enquiryRequest" message="impl:today_enquiryRequest" />
+      <wsdl:output name="today_enquiryResponse" message="impl:today_enquiryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="stock_transfer" parameterOrder="in">
+      <wsdl:input name="stock_transferRequest" message="impl:stock_transferRequest" />
+      <wsdl:output name="stock_transferResponse" message="impl:stock_transferResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EloadFunctionSoapBinding" type="impl:EloadFunction">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="load">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="loadRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="loadResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="loginRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="loginResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logout">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="logoutRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="logoutResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="change_password">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="change_passwordRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="change_passwordResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="change_mpin">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="change_mpinRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="change_mpinResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stock_enquiry">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="stock_enquiryRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="stock_enquiryResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="today_enquiry">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="today_enquiryRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="today_enquiryResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stock_transfer">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="stock_transferRequest">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output name="stock_transferResponse">
+        <wsdlsoap:body use="encoded" namespace="http://mwallet.fss.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EloadFunctionService">
+    <wsdl:port name="EloadFunction" binding="impl:EloadFunctionSoapBinding">
+      <wsdlsoap:address location="http://10.149.5.166:8080/eload/services/EloadFunction" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,15 @@
+02:42:11:4211:PM Login successfull., username=itopup, IP=127.0.0.1
+02:42:47:4247:PM load on Mobifone ( targetMsIsdn=0904238851, amount = 10000 ) failure.
+Exception=System.NullReferenceException: Object reference not set to an instance of an object.
+   at EPaySoap.TransferProcess.MobiLoad(String MerchantID, String targetMsIsdn, Int32 amount) in d:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 342
+   at EPaySoap.TransferProcess.load(String UserName, String Session_ID, String Request_ID, String MerchantID, String targetMsIsdn, Int32 amount) in d:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 196
+02:46:06:466:PM Login successfull., username=itopup, IP=127.0.0.1
+02:46:50:4650:PM load on Mobifone ( targetMsIsdn=0904238851, amount = 10000 ) failure.
+Exception=System.NullReferenceException: Object reference not set to an instance of an object.
+   at EPaySoap.TransferProcess.MobiLoad(String MerchantID, String targetMsIsdn, Int32 amount) in d:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 342
+   at EPaySoap.TransferProcess.load(String UserName, String Session_ID, String Request_ID, String MerchantID, String targetMsIsdn, Int32 amount) in d:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 196
+02:49:42:4942:PM Login successfull., username=itopup, IP=127.0.0.1
+02:50:37:5037:PM load on Mobifone ( targetMsIsdn=0904238851, amount = 10000 ) failure.
+Exception=System.NullReferenceException: Object reference not set to an instance of an object.
+   at EPaySoap.TransferProcess.MobiLoad(String MerchantID, String targetMsIsdn, Int32 amount) in d:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 342
+   at EPaySoap.TransferProcess.load(String UserName, String Session_ID, String Request_ID, String MerchantID, String targetMsIsdn, Int32 amount) in d:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 196

@@ -1,0 +1,15 @@
+02:10:54:1054:PM Login successfull., username=itopup, IP=127.0.0.1
+02:12:19:1219:PM Load failure, invalid targetMsIsdn or provider is not exist. (RequestID=request6, UserName=itopup, IPAddress=127.0.0.1)
+02:13:05:135:PM Login EPay sucessfull. (RequestID=request6, UserName=itopup, IPAddress=127.0.0.1)
+02:13:07:137:PM load on Viettel successfull. ( MerchantID=006,  targetMsIsdn=0983456455, amount=10000 )
+02:13:37:1337:PM Load failure, request_id is exist. (RequestID=request6, UserName=itopup, IPAddress=127.0.0.1)
+02:14:03:143:PM Login EPay sucessfull. (RequestID=request7, UserName=itopup, IPAddress=127.0.0.1)
+02:14:12:1412:PM load on Viettel successfull. ( MerchantID=007,  targetMsIsdn=0983456455, amount=10000 )
+02:14:45:1445:PM Login EPay sucessfull. (RequestID=request8, UserName=itopup, IPAddress=127.0.0.1)
+02:15:34:1534:PM load on Viettel successfull. ( MerchantID=008,  targetMsIsdn=0983456455, amount=10000 )
+02:35:23:3523:PM Login successfull., username=itopup, IP=127.0.0.1
+02:35:49:3549:PM Login EPay sucessfull. (RequestID=request8, UserName=itopup, IPAddress=127.0.0.1)
+02:35:49:3549:PM load on Viettel successfull. ( MerchantID=008,  targetMsIsdn=0983160277, amount=10000 )
+02:37:55:3755:PM Load failure, request_id is exist. (RequestID=request8, UserName=itopup, IPAddress=127.0.0.1)
+02:38:03:383:PM Login EPay sucessfull. (RequestID=request9, UserName=itopup, IPAddress=127.0.0.1)
+02:38:03:383:PM load on Viettel successfull. ( MerchantID=009,  targetMsIsdn=0983160277, amount=10000 )

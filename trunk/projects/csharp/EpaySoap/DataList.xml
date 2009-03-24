@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--begin of Users table-->
+  <UserTable>
+    <Users>
+      <UserName>itopup</UserName>
+      <!--<Password>itopup123456</Password>-->
+      <Password>ykl5Il6VIqyRJoFd369ZdhUatl/WOPK+KbEVL5XJRVg=</Password>
+    </Users>
+    <Users>
+      <UserName>hyweb</UserName>
+      <!-- <Password>hyweb123456</Password> -->
+      <Password>IZmNi2HHIAb61TWYitlJuq9fJgGl4ACT2ihd8lzSY/k=</Password>
+    </Users>
+  </UserTable>
+  <!--end of Users table-->
+  
+  <!--begin of IPAddress table-->
+  <IPAddressTable>
+    <IPAddressList>
+    </IPAddressList>
+    <!--
+   <IPAddressList>
+      <IPAddress>127.0.0.1</IPAddress>
+    </IPAddressList>
+    <IPAddressList>
+      <IPAddress>203.162.14.228</IPAddress>
+    </IPAddressList>
+    <IPAddressList>
+      <IPAddress>222.252.20.199</IPAddress>
+    </IPAddressList>
+	<IPAddressList>
+      <IPAddress>220.130.139.12</IPAddress>
+    </IPAddressList>
+	<IPAddressList>
+      <IPAddress>202.3.172.64</IPAddress>
+    </IPAddressList>
+    -->
+  </IPAddressTable>
+  <!--end of IPAddress table-->
+  
+  <!--begin of Provider table-->
+  <ProviderTable>
+    <!--************************ Begin of Vina ****************-->
+      <ProviderList>
+        <ProviderName>Vina Phone</ProviderName>
+        <ProviderCode>01</ProviderCode>
+        <Prefix>091</Prefix>
+      </ProviderList>
+      <ProviderList>
+        <ProviderName>Vina Phone</ProviderName>
+        <ProviderCode>01</ProviderCode>
+        <Prefix>094</Prefix>
+      </ProviderList>
+      <ProviderList>
+        <ProviderName>Vina Phone</ProviderName>
+        <ProviderCode>01</ProviderCode>
+        <Prefix>0125</Prefix>
+      </ProviderList>
+  <!--************************ End of Vina ****************-->
+
+  <!--************************ Begin of Viettel ****************-->
+    <ProviderList>
+      <ProviderName>Vietel</ProviderName>
+      <ProviderCode>02</ProviderCode>
+      <Prefix>098</Prefix>
+    </ProviderList>
+    <ProviderList>
+      <ProviderName>Vietel</ProviderName>
+      <ProviderCode>02</ProviderCode>
+      <Prefix>0168</Prefix>
+    </ProviderList>
+    <ProviderList>
+      <ProviderName>Vietel</ProviderName>
+      <ProviderCode>02</ProviderCode>
+      <Prefix>0168</Prefix>
+    </ProviderList>
+  <!--************************ End of Viettel ****************-->
+    
+   <!--************************ Begin of Mobi ****************-->
+    <ProviderList>
+      <ProviderName>Mobifone</ProviderName>
+      <ProviderCode>03</ProviderCode>
+      <Prefix>090</Prefix>
+    </ProviderList>
+    <ProviderList>
+      <ProviderName>Vietel</ProviderName>
+      <ProviderCode>02</ProviderCode>
+      <Prefix>0122</Prefix>
+    </ProviderList>   
+    <!--************************ End of Mobi ****************-->
+    
+  </ProviderTable>
+  <!--end of Provider table--> 
+</root>

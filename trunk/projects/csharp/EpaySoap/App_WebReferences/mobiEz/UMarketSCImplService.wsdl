@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:UMARKETSCWS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UMarketSCImplService" targetNamespace="urn:UMARKETSCWS" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=1" namespace="urn:UMARKETSCWS" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=2" namespace="http://www.utiba.com/delirium/ws/TypedQuery" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=3" namespace="http://www.utiba.com/delirium/ws/StdQuery" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=4" namespace="http://www.utiba.com/delirium/ws/Misc" />
+    </xsd:schema>
+  </types>
+  <message name="register">
+    <part name="parameters" element="tns:register" />
+  </message>
+  <message name="registerResponse">
+    <part name="registerResponse" element="tns:registerResponse" />
+  </message>
+  <message name="stop">
+    <part name="parameters" element="tns:stop" />
+  </message>
+  <message name="stopResponse">
+    <part name="stopResponse" element="tns:stopResponse" />
+  </message>
+  <message name="delete">
+    <part name="parameters" element="tns:delete" />
+  </message>
+  <message name="deleteResponse">
+    <part name="deleteResponse" element="tns:deleteResponse" />
+  </message>
+  <message name="reverse">
+    <part name="parameters" element="tns:reverse" />
+  </message>
+  <message name="reverseResponse">
+    <part name="reverseResponse" element="tns:reverseResponse" />
+  </message>
+  <message name="transfer">
+    <part name="parameters" element="tns:transfer" />
+  </message>
+  <message name="transferResponse">
+    <part name="transferResponse" element="tns:transferResponse" />
+  </message>
+  <message name="query">
+    <part name="parameters" element="tns:query" />
+  </message>
+  <message name="queryResponse">
+    <part name="queryResponse" element="tns:queryResponse" />
+  </message>
+  <message name="link">
+    <part name="parameters" element="tns:link" />
+  </message>
+  <message name="linkResponse">
+    <part name="linkResponse" element="tns:linkResponse" />
+  </message>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="loginResponse" element="tns:loginResponse" />
+  </message>
+  <message name="activate">
+    <part name="parameters" element="tns:activate" />
+  </message>
+  <message name="activateResponse">
+    <part name="activateResponse" element="tns:activateResponse" />
+  </message>
+  <message name="getAllAgentGroups">
+    <part name="parameters" element="tns:getAllAgentGroups" />
+  </message>
+  <message name="getAllAgentGroupsResponse">
+    <part name="AgentGroupsResponse" element="tns:AgentGroupsResponse" />
+  </message>
+  <message name="getAgentGroupByAgentID">
+    <part name="parameters" element="tns:getAgentGroupByAgentID" />
+  </message>
+  <message name="getAgentGroupByAgentIDResponse">
+    <part name="AgentGroupsResponse" element="tns:AgentGroupsResponse" />
+  </message>
+  <message name="getAgentByReference">
+    <part name="parameters" element="tns:getAgentByReference" />
+  </message>
+  <message name="getAgentByReferenceResponse">
+    <part name="AgentResponse" element="tns:AgentResponse" />
+  </message>
+  <message name="getAgentByReferenceID">
+    <part name="parameters" element="tns:getAgentByReferenceID" />
+  </message>
+  <message name="getAgentByReferenceIDResponse">
+    <part name="AgentResponse" element="tns:AgentResponse" />
+  </message>
+  <message name="getAccountByReferenceID">
+    <part name="parameters" element="tns:getAccountByReferenceID" />
+  </message>
+  <message name="getAccountByReferenceIDResponse">
+    <part name="AccountsResponse" element="tns:AccountsResponse" />
+  </message>
+  <message name="getAccountByReferenceIDAndType">
+    <part name="parameters" element="tns:getAccountByReferenceIDAndType" />
+  </message>
+  <message name="getAccountByReferenceIDAndTypeResponse">
+    <part name="AccountResponse" element="tns:AccountResponse" />
+  </message>
+  <message name="getTransactionByID">
+    <part name="parameters" element="tns:getTransactionByID" />
+  </message>
+  <message name="getTransactionByIDResponse">
+    <part name="TransactionResponse" element="tns:TransactionResponse" />
+  </message>
+  <message name="pin">
+    <part name="parameters" element="tns:pin" />
+  </message>
+  <message name="pinResponse">
+    <part name="pinResponse" element="tns:pinResponse" />
+  </message>
+  <message name="sales">
+    <part name="parameters" element="tns:sales" />
+  </message>
+  <message name="salesResponse">
+    <part name="salesResponse" element="tns:salesResponse" />
+  </message>
+  <message name="sell">
+    <part name="parameters" element="tns:sell" />
+  </message>
+  <message name="sellResponse">
+    <part name="sellResponse" element="tns:sellResponse" />
+  </message>
+  <message name="buy">
+    <part name="parameters" element="tns:buy" />
+  </message>
+  <message name="buyResponse">
+    <part name="buyResponse" element="tns:buyResponse" />
+  </message>
+  <message name="donate">
+    <part name="parameters" element="tns:donate" />
+  </message>
+  <message name="donateResponse">
+    <part name="donateResponse" element="tns:donateResponse" />
+  </message>
+  <message name="authorise">
+    <part name="parameters" element="tns:authorise" />
+  </message>
+  <message name="authoriseResponse">
+    <part name="authoriseResponse" element="tns:authoriseResponse" />
+  </message>
+  <message name="authorise2">
+    <part name="parameters" element="tns:authorise2" />
+  </message>
+  <message name="authorise2Response">
+    <part name="authorise2Response" element="tns:authorise2Response" />
+  </message>
+  <message name="balance">
+    <part name="parameters" element="tns:balance" />
+  </message>
+  <message name="balanceResponse">
+    <part name="balanceResponse" element="tns:balanceResponse" />
+  </message>
+  <message name="createsession">
+    <part name="parameters" element="tns:createsession" />
+  </message>
+  <message name="createsessionResponse">
+    <part name="createsessionResponse" element="tns:createsessionResponse" />
+  </message>
+  <message name="delschedule">
+    <part name="parameters" element="tns:delschedule" />
+  </message>
+  <message name="delscheduleResponse">
+    <part name="delscheduleResponse" element="tns:delscheduleResponse" />
+  </message>
+  <message name="transquery">
+    <part name="parameters" element="tns:transquery" />
+  </message>
+  <message name="transqueryResponse">
+    <part name="transqueryResponse" element="tns:transqueryResponse" />
+  </message>
+  <message name="nextid">
+    <part name="parameters" element="tns:nextid" />
+  </message>
+  <message name="nextidResponse">
+    <part name="nextidResponse" element="tns:nextidResponse" />
+  </message>
+  <message name="deactivate">
+    <part name="parameters" element="tns:deactivate" />
+  </message>
+  <message name="deactivateResponse">
+    <part name="deactivateResponse" element="tns:deactivateResponse" />
+  </message>
+  <message name="bankcashin">
+    <part name="parameters" element="tns:bankcashin" />
+  </message>
+  <message name="bankcashinResponse">
+    <part name="bankcashinResponse" element="tns:bankcashinResponse" />
+  </message>
+  <message name="confirm">
+    <part name="parameters" element="tns:confirm" />
+  </message>
+  <message name="confirmResponse">
+    <part name="confirmResponse" element="tns:confirmResponse" />
+  </message>
+  <message name="delchild">
+    <part name="parameters" element="tns:delchild" />
+  </message>
+  <message name="delchildResponse">
+    <part name="delchildResponse" element="tns:delchildResponse" />
+  </message>
+  <message name="delparent">
+    <part name="parameters" element="tns:delparent" />
+  </message>
+  <message name="delparentResponse">
+    <part name="delparentResponse" element="tns:delparentResponse" />
+  </message>
+  <message name="modify">
+    <part name="parameters" element="tns:modify" />
+  </message>
+  <message name="modifyResponse">
+    <part name="modifyResponse" element="tns:modifyResponse" />
+  </message>
+  <message name="billpay">
+    <part name="parameters" element="tns:billpay" />
+  </message>
+  <message name="billpayResponse">
+    <part name="billpayResponse" element="tns:billpayResponse" />
+  </message>
+  <message name="joinparent">
+    <part name="parameters" element="tns:joinparent" />
+  </message>
+  <message name="joinparentResponse">
+    <part name="joinparentResponse" element="tns:joinparentResponse" />
+  </message>
+  <message name="joinchild">
+    <part name="parameters" element="tns:joinchild" />
+  </message>
+  <message name="joinchildResponse">
+    <part name="joinchildResponse" element="tns:joinchildResponse" />
+  </message>
+  <message name="billcollect">
+    <part name="parameters" element="tns:billcollect" />
+  </message>
+  <message name="billcollectResponse">
+    <part name="billcollectResponse" element="tns:billcollectResponse" />
+  </message>
+  <message name="bankcashout">
+    <part name="parameters" element="tns:bankcashout" />
+  </message>
+  <message name="bankcashoutResponse">
+    <part name="bankcashoutResponse" element="tns:bankcashoutResponse" />
+  </message>
+  <portType name="UMarketSC">
+    <operation name="register">
+      <input message="tns:register" />
+      <output message="tns:registerResponse" />
+    </operation>
+    <operation name="stop">
+      <input message="tns:stop" />
+      <output message="tns:stopResponse" />
+    </operation>
+    <operation name="delete">
+      <input message="tns:delete" />
+      <output message="tns:deleteResponse" />
+    </operation>
+    <operation name="reverse">
+      <input message="tns:reverse" />
+      <output message="tns:reverseResponse" />
+    </operation>
+    <operation name="transfer">
+      <input message="tns:transfer" />
+      <output message="tns:transferResponse" />
+    </operation>
+    <operation name="query">
+      <input message="tns:query" />
+      <output message="tns:queryResponse" />
+    </operation>
+    <operation name="link">
+      <input message="tns:link" />
+      <output message="tns:linkResponse" />
+    </operation>
+    <operation name="login">
+      <input message="tns:login" />
+      <output message="tns:loginResponse" />
+    </operation>
+    <operation name="activate">
+      <input message="tns:activate" />
+      <output message="tns:activateResponse" />
+    </operation>
+    <operation name="getAllAgentGroups">
+      <input message="tns:getAllAgentGroups" />
+      <output message="tns:getAllAgentGroupsResponse" />
+    </operation>
+    <operation name="getAgentGroupByAgentID">
+      <input message="tns:getAgentGroupByAgentID" />
+      <output message="tns:getAgentGroupByAgentIDResponse" />
+    </operation>
+    <operation name="getAgentByReference">
+      <input message="tns:getAgentByReference" />
+      <output message="tns:getAgentByReferenceResponse" />
+    </operation>
+    <operation name="getAgentByReferenceID">
+      <input message="tns:getAgentByReferenceID" />
+      <output message="tns:getAgentByReferenceIDResponse" />
+    </operation>
+    <operation name="getAccountByReferenceID">
+      <input message="tns:getAccountByReferenceID" />
+      <output message="tns:getAccountByReferenceIDResponse" />
+    </operation>
+    <operation name="getAccountByReferenceIDAndType">
+      <input message="tns:getAccountByReferenceIDAndType" />
+      <output message="tns:getAccountByReferenceIDAndTypeResponse" />
+    </operation>
+    <operation name="getTransactionByID">
+      <input message="tns:getTransactionByID" />
+      <output message="tns:getTransactionByIDResponse" />
+    </operation>
+    <operation name="pin">
+      <input message="tns:pin" />
+      <output message="tns:pinResponse" />
+    </operation>
+    <operation name="sales">
+      <input message="tns:sales" />
+      <output message="tns:salesResponse" />
+    </operation>
+    <operation name="sell">
+      <input message="tns:sell" />
+      <output message="tns:sellResponse" />
+    </operation>
+    <operation name="buy">
+      <input message="tns:buy" />
+      <output message="tns:buyResponse" />
+    </operation>
+    <operation name="donate">
+      <input message="tns:donate" />
+      <output message="tns:donateResponse" />
+    </operation>
+    <operation name="authorise">
+      <input message="tns:authorise" />
+      <output message="tns:authoriseResponse" />
+    </operation>
+    <operation name="authorise2">
+      <input message="tns:authorise2" />
+      <output message="tns:authorise2Response" />
+    </operation>
+    <operation name="balance">
+      <input message="tns:balance" />
+      <output message="tns:balanceResponse" />
+    </operation>
+    <operation name="createsession">
+      <input message="tns:createsession" />
+      <output message="tns:createsessionResponse" />
+    </operation>
+    <operation name="delschedule">
+      <input message="tns:delschedule" />
+      <output message="tns:delscheduleResponse" />
+    </operation>
+    <operation name="transquery">
+      <input message="tns:transquery" />
+      <output message="tns:transqueryResponse" />
+    </operation>
+    <operation name="nextid">
+      <input message="tns:nextid" />
+      <output message="tns:nextidResponse" />
+    </operation>
+    <operation name="deactivate">
+      <input message="tns:deactivate" />
+      <output message="tns:deactivateResponse" />
+    </operation>
+    <operation name="bankcashin">
+      <input message="tns:bankcashin" />
+      <output message="tns:bankcashinResponse" />
+    </operation>
+    <operation name="confirm">
+      <input message="tns:confirm" />
+      <output message="tns:confirmResponse" />
+    </operation>
+    <operation name="delchild">
+      <input message="tns:delchild" />
+      <output message="tns:delchildResponse" />
+    </operation>
+    <operation name="delparent">
+      <input message="tns:delparent" />
+      <output message="tns:delparentResponse" />
+    </operation>
+    <operation name="modify">
+      <input message="tns:modify" />
+      <output message="tns:modifyResponse" />
+    </operation>
+    <operation name="billpay">
+      <input message="tns:billpay" />
+      <output message="tns:billpayResponse" />
+    </operation>
+    <operation name="joinparent">
+      <input message="tns:joinparent" />
+      <output message="tns:joinparentResponse" />
+    </operation>
+    <operation name="joinchild">
+      <input message="tns:joinchild" />
+      <output message="tns:joinchildResponse" />
+    </operation>
+    <operation name="billcollect">
+      <input message="tns:billcollect" />
+      <output message="tns:billcollectResponse" />
+    </operation>
+    <operation name="bankcashout">
+      <input message="tns:bankcashout" />
+      <output message="tns:bankcashoutResponse" />
+    </operation>
+  </portType>
+  <binding name="UMarketSCBinding" type="tns:UMarketSC">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="register">
+      <soap:operation soapAction="urn:UMARKETSCWS/register" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="stop">
+      <soap:operation soapAction="urn:UMARKETSCWS/stop" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="urn:UMARKETSCWS/delete" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="reverse">
+      <soap:operation soapAction="urn:UMARKETSCWS/reverse" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="transfer">
+      <soap:operation soapAction="urn:UMARKETSCWS/transfer" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="query">
+      <soap:operation soapAction="urn:UMARKETSCWS/query" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="link">
+      <soap:operation soapAction="urn:UMARKETSCWS/link" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="urn:UMARKETSCWS/login" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="activate">
+      <soap:operation soapAction="urn:UMARKETSCWS/activate" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllAgentGroups">
+      <soap:operation soapAction="urn:UMARKETSCWS/getAllAgentGroups" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAgentGroupByAgentID">
+      <soap:operation soapAction="urn:UMARKETSCWS/getAgentGroupByAgentID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAgentByReference">
+      <soap:operation soapAction="urn:UMARKETSCWS/getAgentByReference" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAgentByReferenceID">
+      <soap:operation soapAction="urn:UMARKETSCWS/getAgentByReferenceID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountByReferenceID">
+      <soap:operation soapAction="urn:UMARKETSCWS/getAccountByReferenceID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAccountByReferenceIDAndType">
+      <soap:operation soapAction="urn:UMARKETSCWS/getAccountByReferenceIDAndType" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getTransactionByID">
+      <soap:operation soapAction="urn:UMARKETSCWS/getTransactionByID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="pin">
+      <soap:operation soapAction="urn:UMARKETSCWS/pin" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="sales">
+      <soap:operation soapAction="urn:UMARKETSCWS/sales" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="sell">
+      <soap:operation soapAction="urn:UMARKETSCWS/sell" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buy">
+      <soap:operation soapAction="urn:UMARKETSCWS/buy" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="donate">
+      <soap:operation soapAction="urn:UMARKETSCWS/donate" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="authorise">
+      <soap:operation soapAction="urn:UMARKETSCWS/authorise" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="authorise2">
+      <soap:operation soapAction="urn:UMARKETSCWS/authorise2" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="balance">
+      <soap:operation soapAction="urn:UMARKETSCWS/balance" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="createsession">
+      <soap:operation soapAction="urn:UMARKETSCWS/createsession" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="delschedule">
+      <soap:operation soapAction="urn:UMARKETSCWS/delschedule" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="transquery">
+      <soap:operation soapAction="urn:UMARKETSCWS/transquery" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="nextid">
+      <soap:operation soapAction="urn:UMARKETSCWS/nextid" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deactivate">
+      <soap:operation soapAction="urn:UMARKETSCWS/deactivate" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="bankcashin">
+      <soap:operation soapAction="urn:UMARKETSCWS/bankcashin" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="confirm">
+      <soap:operation soapAction="urn:UMARKETSCWS/confirm" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="delchild">
+      <soap:operation soapAction="urn:UMARKETSCWS/delchild" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="delparent">
+      <soap:operation soapAction="urn:UMARKETSCWS/delparent" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modify">
+      <soap:operation soapAction="urn:UMARKETSCWS/modify" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="billpay">
+      <soap:operation soapAction="urn:UMARKETSCWS/billpay" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="joinparent">
+      <soap:operation soapAction="urn:UMARKETSCWS/joinparent" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="joinchild">
+      <soap:operation soapAction="urn:UMARKETSCWS/joinchild" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="billcollect">
+      <soap:operation soapAction="urn:UMARKETSCWS/billcollect" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="bankcashout">
+      <soap:operation soapAction="urn:UMARKETSCWS/bankcashout" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="UMarketSCImplService">
+    <port name="UMarketSC" binding="tns:UMarketSCBinding">
+      <soap:address location="http://10.151.9.214:8081/services/umarketsc" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:UMARKETSCWS" xmlns:ns1="http://www.utiba.com/delirium/ws/StdQuery" xmlns:ns2="http://www.utiba.com/delirium/ws/TypedQuery" xmlns:ns3="http://www.utiba.com/delirium/ws/Misc" elementFormDefault="qualified" targetNamespace="urn:UMARKETSCWS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=3" namespace="http://www.utiba.com/delirium/ws/StdQuery" />
+  <xs:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=2" namespace="http://www.utiba.com/delirium/ws/TypedQuery" />
+  <xs:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=4" namespace="http://www.utiba.com/delirium/ws/Misc" />
+  <xs:element name="AccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AccountReturn" type="tns:AccountResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AccountsReturn" type="tns:AccountsResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgentGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AgentGroupsReturn" type="tns:AgentGroupsResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AgentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AgentReturn" type="tns:AgentResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="TransactionReturn" type="tns:TransactionResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="activate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="activateRequest" type="tns:standardBizRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="activateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="activateReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="authorise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="authoriseRequest" type="tns:authoriseRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="authorise2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="authoriseRequest" type="tns:authoriseRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="authorise2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="authorise2Return" type="tns:authorise2ResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="authoriseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="authoriseReturn" type="tns:authoriseResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="balance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="balanceRequest" type="tns:balanceRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="balanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="balanceReturn" type="tns:balanceResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bankcashin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bankcashinRequest" type="tns:bankcashinRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bankcashinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bankcashinReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bankcashout">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bankcashoutRequest" type="tns:bankcashoutRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="bankcashoutResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="bankcashoutReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="billcollect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="billcollectRequest" type="tns:billcollectRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="billcollectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="billcollectReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="billpay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="billpayRequest" type="tns:billpayRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="billpayResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="billpayReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="buyRequest" type="tns:buyRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="buyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="buyReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="confirm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="confirmRequest" type="tns:confirmRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="confirmResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="confirmReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createsession">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createsessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="createsessionReturn" type="tns:createsessionResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deactivate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="deactivateRequest" type="tns:standardBizRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deactivateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="deactivateReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delchild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="delchildRequest" type="tns:delchildRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delchildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="delchildReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delete">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="deleteRequest" type="tns:deleteRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="deleteReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delparent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="delparentRequest" type="tns:delparentRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delparentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="delparentReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delschedule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="delscheduleRequest" type="tns:delscheduleRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="delscheduleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="delscheduleReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="donate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="donateRequest" type="tns:donateRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="donateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="donateReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccountByReferenceID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="getAccountByReferenceIDRequest" type="tns:getAccountByReferenceIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAccountByReferenceIDAndType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="getAccountByReferenceIDAndTypeRequest" type="tns:getAccountByReferenceIDAndTypeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAgentByReference">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="getAgentByReferenceRequest" type="tns:getAgentByReferenceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAgentByReferenceID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="getAgentByReferenceIDRequest" type="tns:getAgentByReferenceIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAgentGroupByAgentID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="getAgentGroupByAgentIDRequest" type="tns:getAgentGroupByAgentIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllAgentGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="getAllAgentGroupsRequest" type="ns1:standardQueryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTransactionByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="getTransactionByIDRequest" type="tns:getTransactionByIDRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="joinchild">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="joinchildRequest" type="tns:joinchildRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="joinchildResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="joinchildReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="joinparent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="joinparentRequest" type="tns:joinparentRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="joinparentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="joinparentReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="link">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="linkRequest" type="tns:linkRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="linkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="linkReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loginRequest" type="tns:loginRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="loginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loginReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="modifyRequest" type="tns:modifyRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="modifyReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nextid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nextidRequest" type="tns:nextidRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="nextidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nextidReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="pinRequest" type="tns:pinRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="pinReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="query">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="queryRequest" type="tns:queryRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="queryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="queryReturn" type="tns:queryResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="register">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="registerRequest" type="tns:registerRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="registerReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reverse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reverseRequest" type="tns:reverseRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="reverseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="reverseReturn" type="tns:reverseResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="salesRequest" type="tns:salesRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="salesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="salesReturn" type="tns:salesResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sell">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sellRequest" type="tns:sellRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sellResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sellReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="stopRequest" type="tns:standardBizRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="stopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="stopReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transfer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transferRequest" type="tns:transferRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transferResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transferReturn" type="tns:standardBizResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transquery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transqueryRequest" type="tns:transqueryRequestType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transqueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="transqueryReturn" type="tns:transqueryResponseType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="getAccountByReferenceIDRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryRequest">
+        <xs:sequence>
+          <xs:element name="referenceID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getTransactionByIDRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryRequest">
+        <xs:sequence>
+          <xs:element name="ID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getAgentGroupByAgentIDRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryRequest">
+        <xs:sequence>
+          <xs:element name="agentID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getAgentByReferenceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryRequest">
+        <xs:sequence>
+          <xs:element name="reference" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="autogen" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getAccountByReferenceIDAndTypeRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryRequest">
+        <xs:sequence>
+          <xs:element name="referenceID" type="xs:long" />
+          <xs:element name="type" type="xs:int" />
+        </xs:sequence>
+        <xs:attribute name="autogen" type="xs:boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="getAgentByReferenceIDRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryRequest">
+        <xs:sequence>
+          <xs:element name="referenceID" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgentResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agent" type="tns:MarketAgent" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MarketAgent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns2:Agent">
+        <xs:sequence>
+          <xs:element name="createdDate" type="xs:dateTime" />
+          <xs:element name="deletedDate" type="xs:dateTime" />
+          <xs:element name="organisation" type="xs:int" />
+          <xs:element name="DSComission" type="xs:long" />
+          <xs:element name="POSComission" type="xs:long" />
+          <xs:element name="agentObject" type="xs:string" />
+          <xs:element name="loBalThreshold" type="xs:decimal" />
+          <xs:element name="loBalAmount" type="xs:decimal" />
+          <xs:element name="loBalSource" type="xs:string" />
+          <xs:element name="hiBalThreshold" type="xs:decimal" />
+          <xs:element name="hiBalAmount" type="xs:decimal" />
+          <xs:element name="hiBalSource" type="xs:string" />
+          <xs:element name="lastAutoCash" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TransactionResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="transaction" type="ns2:Transaction" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AccountResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="account" type="ns2:Account" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AccountsResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="accounts" nillable="true" type="ns2:Account" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AgentGroupsResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ns1:standardQueryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="agentGroups" nillable="true" type="ns2:AgentGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="queryRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="standardBizRequest">
+    <xs:sequence>
+      <xs:element name="sessionid" type="xs:string" />
+      <xs:element minOccurs="0" name="wait" type="xs:boolean" />
+      <xs:element minOccurs="0" name="schedule" type="xs:string" />
+      <xs:element minOccurs="0" name="schedfreq" type="xs:int" />
+      <xs:element minOccurs="0" name="ext_usedefault" type="xs:string" />
+      <xs:element minOccurs="0" name="ext_source" type="xs:string" />
+      <xs:element minOccurs="0" name="ext_details" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buyRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="target" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+          <xs:element name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="product" type="xs:string" />
+          <xs:element minOccurs="0" name="recipient" type="xs:string" />
+          <xs:element minOccurs="0" name="reference1" type="xs:string" />
+          <xs:element minOccurs="0" name="reference2" type="xs:string" />
+          <xs:element minOccurs="0" name="notify_alternate" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="authoriseRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="transqueryRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="transid" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="bankcashinRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="source" type="xs:string" />
+          <xs:element minOccurs="0" name="usedefault" type="xs:string" />
+          <xs:element minOccurs="0" name="details" type="xs:string" />
+          <xs:element name="amount" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="balanceRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="salesRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="initiator" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+          <xs:element minOccurs="0" name="target" type="xs:string" />
+          <xs:element minOccurs="0" name="start" type="xs:long" />
+          <xs:element minOccurs="0" name="start_offset" type="xs:int" />
+          <xs:element minOccurs="0" name="end" type="xs:long" />
+          <xs:element minOccurs="0" name="end_offset" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="loginRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="initiator" type="xs:string" />
+          <xs:element name="pin" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="transferRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="to" type="xs:string" />
+          <xs:element name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="delchildRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="parent" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="billcollectRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="to" type="xs:string" />
+          <xs:element name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+          <xs:element minOccurs="0" name="details" type="xs:string" />
+          <xs:element minOccurs="0" name="suppress_confirm" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="joinparentRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="parent" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="linkRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="target" type="xs:string" />
+          <xs:element name="type" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="delparentRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="parent" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="joinchildRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="parent" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="sellRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="to" type="xs:string" />
+          <xs:element name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+          <xs:element minOccurs="0" name="suppress_confirm" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="deleteRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agent" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="donateRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="target" type="xs:string" />
+          <xs:element minOccurs="0" name="charity" type="xs:string" />
+          <xs:element name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="notify_alternate" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="reverseRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="initiator" type="xs:string" />
+          <xs:element minOccurs="0" name="transactionID" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="modifyRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agent" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="email_address" type="xs:string" />
+          <xs:element minOccurs="0" name="sms_address" type="xs:string" />
+          <xs:element minOccurs="0" name="language" type="xs:string" />
+          <xs:element minOccurs="0" name="lo_bal_thres" type="xs:decimal" />
+          <xs:element minOccurs="0" name="lo_bal_amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="lo_bal_source" type="xs:string" />
+          <xs:element minOccurs="0" name="hi_bal_thres" type="xs:decimal" />
+          <xs:element minOccurs="0" name="hi_bal_amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="hi_bal_source" type="xs:string" />
+          <xs:element minOccurs="0" name="extra_params" type="tns:KeyValuePairMap" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="KeyValuePairMap">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="keyValuePair" nillable="true" type="tns:KeyValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KeyValuePair">
+    <xs:sequence>
+      <xs:element name="key" type="xs:string" />
+      <xs:element name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="billpayRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="target" type="xs:string" />
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+          <xs:element name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="reference1" type="xs:string" />
+          <xs:element minOccurs="0" name="reference2" type="xs:string" />
+          <xs:element minOccurs="0" name="details" type="xs:string" />
+          <xs:element minOccurs="0" name="notify_alternate" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="delscheduleRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="sched_id" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="bankcashoutRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="target" type="xs:string" />
+          <xs:element name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="usedefault" type="xs:string" />
+          <xs:element minOccurs="0" name="details" type="xs:string" />
+          <xs:element minOccurs="0" name="notify_alternate" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="registerRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="initiator" type="xs:string" />
+          <xs:element minOccurs="0" name="agent" type="xs:string" />
+          <xs:element minOccurs="0" name="new_pin" type="xs:string" />
+          <xs:element minOccurs="0" name="language" type="xs:string" />
+          <xs:element minOccurs="0" name="name" type="xs:string" />
+          <xs:element minOccurs="0" name="email_address" type="xs:string" />
+          <xs:element minOccurs="0" name="sms_address" type="xs:string" />
+          <xs:element minOccurs="0" name="lo_bal_thres" type="xs:decimal" />
+          <xs:element minOccurs="0" name="lo_bal_amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="lo_bal_source" type="xs:string" />
+          <xs:element minOccurs="0" name="hi_bal_thres" type="xs:decimal" />
+          <xs:element minOccurs="0" name="hi_bal_amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="hi_bal_source" type="xs:string" />
+          <xs:element minOccurs="0" name="extra_params" type="tns:KeyValuePairMap" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pinRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element name="initiator" type="xs:string" />
+          <xs:element name="pin" type="xs:string" />
+          <xs:element name="new_pin" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="confirmRequestType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="transid" type="xs:int" />
+          <xs:element name="action" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="standardBizResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="transid" type="xs:int" />
+      <xs:element minOccurs="0" name="schedule_id" type="xs:long" />
+      <xs:element name="result" type="xs:int" />
+      <xs:element name="result_namespace" type="xs:string" />
+      <xs:element minOccurs="0" name="fee" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="authorise2ResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="functions" type="ns3:KeyValuePairMap" />
+          <xs:element minOccurs="0" name="default_access" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="authoriseResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="functions" type="tns:KeyValuePairMap" />
+          <xs:element minOccurs="0" name="default_access" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="salesResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sum" type="xs:decimal" />
+          <xs:element minOccurs="0" name="count" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="queryResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="last_credit_value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="last_credit_date" type="xs:long" />
+          <xs:element minOccurs="0" name="last_debit_value" type="xs:decimal" />
+          <xs:element minOccurs="0" name="last_debit_date" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="transqueryResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="initiator" type="xs:string" />
+          <xs:element minOccurs="0" name="creditor" type="xs:string" />
+          <xs:element minOccurs="0" name="debtor" type="xs:string" />
+          <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="type" type="xs:int" />
+          <xs:element minOccurs="0" name="external" type="xs:boolean" />
+          <xs:element minOccurs="0" name="date" type="xs:long" />
+          <xs:element minOccurs="0" name="state" type="xs:int" />
+          <xs:element minOccurs="0" name="trans_result" type="xs:int" />
+          <xs:element minOccurs="0" name="trans_result_namespace" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="balanceResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="avail_1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="avail_2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="avail_3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="current_1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="current_2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="current_3" type="xs:decimal" />
+          <xs:element minOccurs="0" name="pending_1" type="xs:decimal" />
+          <xs:element minOccurs="0" name="pending_2" type="xs:decimal" />
+          <xs:element minOccurs="0" name="pending_3" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="reverseResponseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:standardBizResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="trans_result" type="xs:int" />
+          <xs:element minOccurs="0" name="trans_result_namespace" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="createsessionResponseType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sessionid" type="xs:string" />
+      <xs:element name="result" type="xs:int" />
+      <xs:element name="result_namespace" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="nextidRequestType">
+    <xs:sequence>
+      <xs:element name="sessionid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

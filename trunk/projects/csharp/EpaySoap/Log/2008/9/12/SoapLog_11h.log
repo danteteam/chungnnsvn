@@ -1,0 +1,17 @@
+11:00:21:021:AM login EPay failure, invalid username or password. (MerchantID=mc111, UserName=itopup, IPAddress=127.0.0.1)
+11:01:46:146:AM login EPay failure, invalid username or password. (MerchantID=222, UserName=itopup, IPAddress=127.0.0.1)
+11:03:19:319:AM login EPay failure, invalid username or password. (MerchantID=222, UserName=itopup, IPAddress=127.0.0.1)
+11:05:27:527:AM login EPay failure, invalid username or password. (MerchantID=222, UserName=itopup, IPAddress=127.0.0.1)
+11:07:58:758:AM login EPay failure, invalid username or password. (MerchantID=iii, UserName=itopup, IPAddress=127.0.0.1)
+11:09:45:945:AM login EPay failure, invalid username or password. (MerchantID=mc111, UserName=itopup, IPAddress=127.0.0.1)
+11:11:19:1119:AM login EPay failure, invalid username or password. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+11:14:34:1434:AM login EPay sucessfull. (MerchantID=mc111, UserName=itopup, IPAddress=127.0.0.1)
+11:14:36:1436:AM login to VinaPhone successfull. ( sessionid= 1 )
+11:14:36:1436:AM load on VinaPhone successfull. ( MerchantID=mc111,  targetMsIsdn=0912368466, amount=55555 )
+11:14:36:1436:AM logout VinaPhone
+11:14:47:1447:AM login EPay failure, invalid targetMsIsdn or provider is not exist. (MerchantID=mc111, UserName=itopup, IPAddress=127.0.0.1)
+11:14:53:1453:AM login EPay failure, trans_ID is exist. (MerchantID=mc111, UserName=itopup, IPAddress=127.0.0.1)
+11:45:56:4556:AM login EPay sucessfull. (MerchantID=mc111, UserName=itopup, IPAddress=127.0.0.1)
+11:45:56:4556:AM login to VinaPhone successfull. ( sessionid= 1 )
+11:45:56:4556:AM load on VinaPhone successfull. ( MerchantID=mc111,  targetMsIsdn=0912368466, amount=12222222 )
+11:45:56:4556:AM logout VinaPhone
