@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.utiba.com/delirium/ws/TypedQuery" xmlns:ns1="http://www.utiba.com/delirium/ws/Misc" elementFormDefault="qualified" targetNamespace="http://www.utiba.com/delirium/ws/TypedQuery" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://10.151.9.214:8081/services/umarketsc?xsd=4" namespace="http://www.utiba.com/delirium/ws/Misc" />
+  <xs:complexType name="Agent">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:long" />
+      <xs:element name="referenceID" type="xs:long" />
+      <xs:element name="agentID" type="xs:long" />
+      <xs:element name="ownerID" type="xs:long" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="address" type="xs:string" />
+      <xs:element minOccurs="0" name="region" type="xs:string" />
+      <xs:element name="MSISDN" type="xs:string" />
+      <xs:element name="reference" type="xs:string" />
+      <xs:element name="entityReference" type="tns:EntityReference" />
+      <xs:element name="salt" type="xs:string" />
+      <xs:element minOccurs="0" name="emailAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="SMSAddress" type="xs:string" />
+      <xs:element name="Language" type="xs:string" />
+      <xs:element minOccurs="0" name="ICCID" type="xs:string" />
+      <xs:element minOccurs="0" name="upstream" type="xs:long" />
+      <xs:element name="status" type="xs:int" />
+      <xs:element name="agentType" type="xs:int" />
+      <xs:element minOccurs="0" name="primaryGroup" type="xs:long" />
+      <xs:element minOccurs="0" name="depth" type="xs:int" />
+      <xs:element maxOccurs="unbounded" name="agentData" type="ns1:KeyValuePair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EntityReference">
+    <xs:sequence>
+      <xs:element name="reference" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element name="capSetID" type="xs:long" />
+      <xs:element name="state" type="xs:short" />
+      <xs:element name="ID" type="xs:int" />
+      <xs:element name="order" type="xs:int" />
+      <xs:element name="type" type="xs:string" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="result" type="xs:string" />
+      <xs:element name="resultNamespace" type="xs:string" />
+      <xs:element name="created" type="xs:dateTime" />
+      <xs:element name="lastModified" type="xs:dateTime" />
+      <xs:element name="group" type="xs:long" />
+      <xs:element name="initiator" type="xs:string" />
+      <xs:element name="initiatorEntity" type="tns:Entity" />
+      <xs:element name="channel" type="xs:int" />
+      <xs:element maxOccurs="unbounded" name="parties" type="tns:TransactionParty" />
+      <xs:element maxOccurs="unbounded" name="params" type="tns:TransactionData" />
+      <xs:element maxOccurs="unbounded" name="extTransactions" type="tns:ExtTransaction" />
+      <xs:element name="parentID" type="xs:int" />
+      <xs:element name="flags" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Entity">
+    <xs:sequence>
+      <xs:element name="agent" type="tns:Agent" />
+      <xs:element name="owner" type="tns:Agent" />
+      <xs:element name="ID" type="xs:long" />
+      <xs:element name="referenceID" type="xs:long" />
+      <xs:element name="ownerID" type="xs:long" />
+      <xs:element name="agentID" type="xs:long" />
+      <xs:element name="MSISDN" type="xs:string" />
+      <xs:element name="reference" type="xs:string" />
+      <xs:element name="deliriumEntityReference" type="tns:EntityReference" />
+      <xs:element name="account" type="tns:Account" />
+      <xs:element name="accountType" type="xs:int" />
+      <xs:element name="accountID" type="xs:long" />
+      <xs:element name="parent" type="tns:Entity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Account">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:long" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element name="agent" type="xs:long" />
+      <xs:element name="ownerID" type="xs:long" />
+      <xs:element minOccurs="0" name="agentType" type="xs:int" />
+      <xs:element name="created" type="xs:dateTime" />
+      <xs:element name="openDate" type="xs:dateTime" />
+      <xs:element name="currBalance" type="xs:decimal" />
+      <xs:element name="availBalance" type="xs:decimal" />
+      <xs:element name="balance" type="tns:WalletBalance" />
+      <xs:element name="dirtyBalance" type="tns:WalletBalance" />
+      <xs:element name="threshold" type="xs:decimal" />
+      <xs:element name="limit" type="xs:decimal" />
+      <xs:element name="rate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="status" type="xs:int" />
+      <xs:element name="upperLimit" type="xs:decimal" />
+      <xs:element name="capSetID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WalletBalance">
+    <xs:sequence>
+      <xs:element name="currentBalance" type="xs:decimal" />
+      <xs:element name="availableBalance" type="xs:decimal" />
+      <xs:element name="pendingBalance" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionParty">
+    <xs:sequence>
+      <xs:element name="type" type="xs:int" />
+      <xs:element name="accountID" type="xs:long" />
+      <xs:element name="party" type="tns:Entity" />
+      <xs:element name="amount" type="xs:decimal" />
+      <xs:element name="money" type="xs:decimal" />
+      <xs:element name="transCurrBalance" type="xs:decimal" />
+      <xs:element name="transAvailBalance" type="xs:decimal" />
+      <xs:element name="transPreCurrBalance" type="xs:decimal" />
+      <xs:element name="transPreAvailBalance" type="xs:decimal" />
+      <xs:element name="transPreBalance" type="tns:WalletBalance" />
+      <xs:element name="preAuditBalance" type="tns:WalletBalance" />
+      <xs:element name="postAuditBalance" type="tns:WalletBalance" />
+      <xs:element name="balance" type="tns:WalletBalance" />
+      <xs:element name="State" type="xs:short" />
+      <xs:element name="OriginalState" type="xs:short" />
+      <xs:element name="OriginalAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionData">
+    <xs:sequence>
+      <xs:element name="key" type="xs:string" />
+      <xs:element name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ExtTransaction">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:long" />
+      <xs:element name="type" type="xs:string" />
+      <xs:element name="lookup" type="xs:string" />
+      <xs:element name="state" type="xs:short" />
+      <xs:element name="action" type="xs:short" />
+      <xs:element name="description" type="xs:string" />
+      <xs:element name="result" type="xs:string" />
+      <xs:element name="created" type="xs:dateTime" />
+      <xs:element maxOccurs="unbounded" name="params" type="ns1:KeyValuePair" />
+      <xs:element name="timeout" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgentGroup">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:long" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

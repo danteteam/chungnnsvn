@@ -1,0 +1,9 @@
+08:34:04:344:AM login EPay failure, invalid username or password. (MerchantID=123, UserName=hywep, IPAddress=127.0.0.1)
+08:34:11:3411:AM login EPay failure, invalid username or password. (MerchantID=123, UserName=hywep, IPAddress=127.0.0.1)
+08:34:39:3439:AM login EPay failure, invalid username or password. (MerchantID=365, UserName=hywep, IPAddress=127.0.0.1)
+08:35:20:3520:AM login EPay failure, invalid username or password. (MerchantID=365, UserName=itopup, IPAddress=127.0.0.1)
+08:35:38:3538:AM login EPay failure, invalid username or password. (MerchantID=365, UserName=itopup, IPAddress=127.0.0.1)
+08:37:05:375:AM login EPay sucessfull. (MerchantID=235, UserName=itopup, IPAddress=127.0.0.1)
+08:37:16:3716:AM login to VinaPhone successfull. ( sessionid= 1 )
+08:37:16:3716:AM load on VinaPhone successfull. ( MerchantID=235,  targetMsIsdn=0912368466, amount=3463 )
+08:37:16:3716:AM logout VinaPhone

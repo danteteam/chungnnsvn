@@ -1,0 +1,11 @@
+11:23:13:2313:AM Login EPay sucessfull. (MerchantID=2352, UserName=itopup, IPAddress=127.0.0.1)
+11:23:15:2315:AM load on VinaPhone ( targetMsIsdn=0912368466, amount = 10000 ) failure.
+Exception=System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:8085
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.InternalConnect(EndPoint remoteEP)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Int32 timeout, Exception& exception)
+   --- End of inner exception stack trace ---
+   at EPaySoap.TransferProcess.VinaLoad(String MerchantID, String targetMsIsdn, Double amount) in e:\Working\Projects\EPaySoap\Sources 2\App_Code\TransferProcess.cs:line 96
+   at EPaySoap.Security.load(String UserName, String Session_ID, String Request_ID, String MerchantID, String targetMsIsdn, Int32 amount) in e:\Working\Projects\EPaySoap\Sources 2\App_Code\Security.cs:line 1063
+11:25:24:2524:AM Load fail, invalid user name or session_id. (MerchantID=2352, UserName=itopup, IPAddress=127.0.0.1)
+11:25:31:2531:AM Load failure, request_id is exist. (MerchantID=2352, UserName=itopup, IPAddress=127.0.0.1)

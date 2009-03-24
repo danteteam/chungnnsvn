@@ -1,0 +1,8 @@
+11:46:52:4652:AM Login EPay sucessfull. (RequestID=request3, UserName=itopup, IPAddress=127.0.0.1)
+11:47:13:4713:AM load on VinaPhone failure. ( MerchantID=003, targetMsIsdn=0912368466, amount=10000 ) 
+11:48:54:4854:AM Load fail, invalid user name or session_id. (RequestID=request3, UserName=itopup, IPAddress=127.0.0.1)
+11:48:59:4859:AM Load failure, request_id is exist. (RequestID=request3, UserName=itopup, IPAddress=127.0.0.1)
+11:49:06:496:AM Login EPay sucessfull. (RequestID=request4, UserName=itopup, IPAddress=127.0.0.1)
+11:49:27:4927:AM load on VinaPhone failure. ( MerchantID=003, targetMsIsdn=0912368466, amount=10000 ) 
+11:50:48:5048:AM Login fail, invalid username or password, username=itopup, IP=127.0.0.1
+11:50:57:5057:AM Login successfull., username=itopup, IP=127.0.0.1

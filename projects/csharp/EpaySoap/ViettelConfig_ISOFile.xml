@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<j8583-config>
+  <!--Enquiry balance message-->
+  <header type="0200">0200</header>
+  <parse type="0200">
+    <field num="2" type="LLVAR" length="0" />    	<!--MSISDN-->
+    <field num="3" type="NUMERIC" length="6" />     <!--Processing Code-->
+    <field num="4" type="NUMERIC" length="12" />    <!--Transaction Amount-->
+    <field num="7" type="NUMERIC" length="14"/>     <!--Transmission Date & Time-->
+    <field num="11" type="NUMERIC" length="15" />   <!--System Trace Audit Number-->
+    <field num="39" type="NUMERIC" length="2" />    <!--Response Code-->
+    <field num="63" type="LLVAR" length="0" />      <!--Client ID-->
+    <field num="64" type="LLLVAR" length="0" />     <!--Message Signature-->
+  </parse>
+  <template type="0200">
+    <field num="64" type="LLLVAR" length="0">ChungNN test</field>
+  </template>
+
+  <!--Load message-->
+  <header type="0210">0210</header>
+  <parse type="0210">
+    <field num="2" type="LLVAR" length="0" />    	<!--MSISDN-->
+    <field num="3" type="NUMERIC" length="6" />     <!--Processing Code-->
+    <field num="4" type="NUMERIC" length="12" />    <!--Transaction Amount-->
+    <field num="7" type="NUMERIC" length="14" />                  <!--Transmission Date & Time-->
+    <field num="11" type="NUMERIC" length="15" />    <!--System Trace Audit Number-->
+    <field num="39" type="NUMERIC" length="2" />    <!--Response Code-->
+    <field num="63" type="LLVAR" length="0" />      <!--Client ID-->
+    <field num="64" type="LLLVAR" length="0" />     <!--Message Signature-->
+  </parse>
+  <template type="0210">
+    <field num="64" type="LLLVAR" length="0">ChungNN test</field>
+  </template>
+
+</j8583-config>

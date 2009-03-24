@@ -1,0 +1,103 @@
+03:19:14:1914:PM login EPay failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:23:20:2320:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:23:20:2320:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:23:20:2320:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000000 )
+03:23:20:2320:PM logout VinaPhone
+03:23:24:2324:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:23:24:2324:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:23:24:2324:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000000 )
+03:23:24:2324:PM logout VinaPhone
+03:24:08:248:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:24:08:248:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:24:08:248:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000000 )
+03:24:08:248:PM logout VinaPhone
+03:24:39:2439:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:24:39:2439:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:24:39:2439:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000000 )
+03:24:39:2439:PM logout VinaPhone
+03:25:41:2541:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:25:42:2542:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:25:42:2542:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000000 )
+03:25:42:2542:PM logout VinaPhone
+03:25:52:2552:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:25:52:2552:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:25:52:2552:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=14000 )
+03:25:52:2552:PM logout VinaPhone
+03:26:00:260:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:26:00:260:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:26:00:260:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=14000 )
+03:26:00:260:PM logout VinaPhone
+03:26:03:263:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:26:03:263:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:26:03:263:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=14000 )
+03:26:03:263:PM logout VinaPhone
+03:26:06:266:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:26:06:266:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:26:06:266:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=14000 )
+03:26:06:266:PM logout VinaPhone
+03:32:30:3230:PM Load failure, ivalid amount. (MerchantID=343, UserName=itopup, IPAddress=127.0.0.1)
+03:32:31:3231:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:32:31:3231:PM load on VinaPhone successfull. ( MerchantID=343,  targetMsIsdn=0912368466, amount=14000 )
+03:32:31:3231:PM logout VinaPhone
+03:32:55:3255:PM Load failure, request_id is exist. (MerchantID=343, UserName=itopup, IPAddress=127.0.0.1)
+03:32:55:3255:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:32:55:3255:PM load on VinaPhone successfull. ( MerchantID=343,  targetMsIsdn=0912368466, amount=14000 )
+03:32:55:3255:PM logout VinaPhone
+03:33:12:3312:PM Load failure, request_id is exist. (MerchantID=343, UserName=itopup, IPAddress=127.0.0.1)
+03:33:17:3317:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:33:17:3317:PM load on VinaPhone successfull. ( MerchantID=343,  targetMsIsdn=0912368466, amount=14000 )
+03:33:17:3317:PM logout VinaPhone
+03:33:26:3326:PM Load failure, request_id is exist. (MerchantID=343, UserName=itopup, IPAddress=127.0.0.1)
+03:33:26:3326:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:33:26:3326:PM load on VinaPhone successfull. ( MerchantID=343,  targetMsIsdn=0912368466, amount=14000 )
+03:33:26:3326:PM logout VinaPhone
+03:34:29:3429:PM Load failure, request_id is exist. (MerchantID=343, UserName=itopup, IPAddress=127.0.0.1)
+03:34:32:3432:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:34:32:3432:PM load on VinaPhone successfull. ( MerchantID=343,  targetMsIsdn=0912368466, amount=14000 )
+03:34:32:3432:PM logout VinaPhone
+03:35:27:3527:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:35:35:3535:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:35:41:3541:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:35:47:3547:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:36:11:3611:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:37:53:3753:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:38:03:383:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:38:06:386:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:38:10:3810:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:40:15:4015:PM Load failure, ivalid amount. (MerchantID=1, UserName=itopup, IPAddress=127.0.0.1)
+03:47:10:4710:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:47:15:4715:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:47:20:4720:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:47:39:4739:PM Login EPay sucessfull. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:47:40:4740:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:47:40:4740:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000 )
+03:47:40:4740:PM logout VinaPhone
+03:47:43:4743:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:47:49:4749:PM Login EPay sucessfull. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:47:49:4749:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:47:49:4749:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=13000 )
+03:47:49:4749:PM logout VinaPhone
+03:49:06:496:PM Login EPay sucessfull. (MerchantID=2346, UserName=itopup, IPAddress=127.0.0.1)
+03:49:06:496:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:49:06:496:PM load on VinaPhone successfull. ( MerchantID=2346,  targetMsIsdn=0912368466, amount=14000 )
+03:49:06:496:PM logout VinaPhone
+03:49:16:4916:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:49:20:4920:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:49:23:4923:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:49:29:4929:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:49:34:4934:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:50:06:506:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:50:26:5026:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:51:12:5112:PM Load failure, ivalid amount. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:51:58:5158:PM Login EPay sucessfull. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:51:59:5159:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:51:59:5159:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000 )
+03:51:59:5159:PM logout VinaPhone
+03:52:03:523:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:57:59:5759:PM Load fail, invalid user name or session_id. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:58:30:5830:PM Load fail, invalid user name or session_id. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:58:47:5847:PM Login EPay sucessfull. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)
+03:58:47:5847:PM login to VinaPhone successfull. ( sessionid= 1 )
+03:58:47:5847:PM load on VinaPhone successfull. ( MerchantID=33,  targetMsIsdn=0912368466, amount=10000 )
+03:58:47:5847:PM logout VinaPhone
+03:58:50:5850:PM Load failure, request_id is exist. (MerchantID=33, UserName=itopup, IPAddress=127.0.0.1)

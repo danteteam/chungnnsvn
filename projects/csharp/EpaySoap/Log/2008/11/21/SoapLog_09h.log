@@ -1,0 +1,4 @@
+09:06:49:649:AM login EPay sucessfull. (MerchantID=463246, UserName=itopup, IPAddress=127.0.0.1)
+09:06:56:656:AM login to VinaPhone successfull. ( sessionid= 1 )
+09:06:56:656:AM load on VinaPhone successfull. ( MerchantID=463246,  targetMsIsdn=0912368466, amount=10000 )
+09:06:56:656:AM logout VinaPhone

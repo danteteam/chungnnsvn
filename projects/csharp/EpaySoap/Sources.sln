@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "E:\...\Sources 2\", "..\Sources 2", "{641E5867-3134-4341-B6D4-0778D1254F36}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = ""$/Projects/Direct Topup/Sources/Sources 2.0", NEAAAAAA"
+		SccAuxPath = ""
+		SccLocalPath = "."
+		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		Debug.AspNetCompiler.VirtualPath = "/Sources 2"
+		Debug.AspNetCompiler.PhysicalPath = "E:\Working\Projects\EPaySoap\Sources 2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Sources 2\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Sources 2"
+		Release.AspNetCompiler.PhysicalPath = "E:\Working\Projects\EPaySoap\Sources 2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Sources 2\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "11352"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		SccWebProject1 = true
+		SccProjectUniqueName1 = .
+		SccLocalPath1 = .
+		SccProjectEnlistmentChoice1 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{641E5867-3134-4341-B6D4-0778D1254F36}.Debug|.NET.ActiveCfg = Debug|.NET
+		{641E5867-3134-4341-B6D4-0778D1254F36}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

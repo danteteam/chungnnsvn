@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\Sources 2\", ".", "{A1B87344-6D00-4DDD-B33F-8605F5F983FF}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/Sources 2"
+		Debug.AspNetCompiler.PhysicalPath = "D:\Working\Projects\EPaySoap\Sources 2\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Sources 2\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Sources 2"
+		Release.AspNetCompiler.PhysicalPath = "D:\Working\Projects\EPaySoap\Sources 2\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Sources 2\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "26242"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B87344-6D00-4DDD-B33F-8605F5F983FF}.Debug|.NET.ActiveCfg = Debug|.NET
+		{A1B87344-6D00-4DDD-B33F-8605F5F983FF}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

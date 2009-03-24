@@ -1,0 +1,6 @@
+09:34:11:3411:AM Login Epay successfull., username=itopup, IP=127.0.0.1
+09:36:02:362:AM Login Epay successfull., username=itopup, IP=127.0.0.1
+09:44:05:445:AM load on Viettel failure. ( MerchantID=8979, targetMsIsdn=8498377021, amount=10000 ) 
+09:44:05:445:AM load on Viettel failure. ( MerchantID=798, targetMsIsdn=8498377021, amount=10000 ) 
+09:45:16:4516:AM Login Epay successfull., username=itopup, IP=127.0.0.1
+09:46:45:4645:AM load on Viettel failure. ( MerchantID=141, targetMsIsdn=8498377021, amount=10000 ) 
