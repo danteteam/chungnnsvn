@@ -1,0 +1,7 @@
+bin\Debug\EPAY_POS_GateWay.exe.config
+bin\Debug\EPAY_POS_GateWay.exe
+bin\Debug\EPAY_POS_GateWay.pdb
+bin\Debug\niso8583.dll
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\EPAY_POS_GateWay.exe
+obj\Debug\EPAY_POS_GateWay.pdb

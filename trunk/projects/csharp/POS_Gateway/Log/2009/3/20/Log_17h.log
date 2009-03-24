@@ -1,0 +1,29 @@
+05:14:08:148:PM EPAY_POS_GateWay Started at 20/03/2009 05:14:08:PM
+05:14:08:148:PM IP Address: 192.168.0.140), Port: 9999
+05:14:08:148:PM Received messages:
+05:14:13:1413:PM ->POS signon(40|123456) fail
+05:20:23:2023:PM ->POS signon(40|123456) fail
+05:24:08:248:PM ->POS signon(40|123456) fail
+05:37:13:3713:PM EPAY_POS_GateWay Started at 20/03/2009 05:37:13:PM
+05:37:13:3713:PM IP Address: 192.168.0.140), Port: 9999
+05:37:13:3713:PM Received messages:
+05:39:40:3940:PM EPAY_POS_GateWay Started at 20/03/2009 05:39:40:PM
+05:39:40:3940:PM IP Address: 192.168.0.140), Port: 9999
+05:39:40:3940:PM Received messages:
+05:40:52:4052:PM EPAY_POS_GateWay Started at 20/03/2009 05:40:52:PM
+05:40:52:4052:PM IP Address: 192.168.0.140), Port: 9999
+05:40:52:4052:PM Received messages:
+05:42:41:4241:PM ->POS signon(40|123456) fail
+05:43:30:4330:PM ->POS signon(40|123456) fail
+05:46:20:4620:PM EPAY_POS_GateWay Started at 20/03/2009 05:46:20:PM
+05:46:20:4620:PM IP Address: 192.168.0.140), Port: 9999
+05:46:20:4620:PM Received messages:
+05:46:33:4633:PM ->POS signon(40|123456) fail
+05:50:03:503:PM ->POS signon(40|123456) fail
+05:55:16:5516:PM EPAY_POS_GateWay Started at 20/03/2009 05:55:16:PM
+05:55:16:5516:PM IP Address: 192.168.0.140), Port: 9999
+05:55:16:5516:PM Received messages:
+05:55:37:5537:PM EPAY_POS_GateWay Started at 20/03/2009 05:55:37:PM
+05:55:37:5537:PM IP Address: 192.168.0.140), Port: 9999
+05:55:37:5537:PM Received messages:
+05:55:43:5543:PM ->POS signon(40|123456) fail

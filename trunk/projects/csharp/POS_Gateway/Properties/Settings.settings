@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EPAY_POS_GateWay.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="OraConnectString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=Topup;Persist Security Info=True;User ID=chungnn;Password=chungnn;Unicode=True</Value>
+    </Setting>
+    <Setting Name="Data_FileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">DataList.xml</Value>
+    </Setting>
+    <Setting Name="Server_IP_Address" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="Log_Path" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">D:\Working\Projects\pTopup\sources\POS_Gateway\POS_GW_Console\EPAY_POS_GateWay\EPAY_POS_GateWay\Log\</Value>
+    </Setting>
+    <Setting Name="AppTimeout" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3000</Value>
+    </Setting>
+    <Setting Name="Server_Port" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8086</Value>
+    </Setting>
+    <Setting Name="TransactionLogType" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="AppPasswordKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">chungnn</Value>
+    </Setting>
+    <Setting Name="EPAY_POS_GateWay_TopupInterface_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://203.162.14.229:8084/service.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

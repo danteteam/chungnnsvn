@@ -1,0 +1,13 @@
+02:26:14:2614:PM EPAY_POS_GateWay Started (18/03/2009 02:26:14).
+02:26:14:2614:PM IP Address = 127.0.0.1
+02:26:14:2614:PM Port = 8086
+02:26:14:2614:PM test interface
+02:26:18:2618:PM SignIn, Errorcode = 0,token=89ebd3ed-c2b3-4fd2-9aca-5fdbdf09252a
+02:26:18:2618:PM PosLogon, Errorcode = 0
+02:26:18:2618:PM PosDownloadSingleSoftpin, Errorcode = 0
+02:26:19:2619:PM PosDownloadSoftpinTemplate, Errorcode = 0
+02:26:19:2619:PM PosRecountTrans, Errorcode = -14
+02:26:19:2619:PM PosSynchronized, Errorcode = 0
+02:26:19:2619:PM PosSynchronizedLogo, Errorcode = 0
+02:26:19:2619:PM PosSynchronizedMenu, Errorcode = 0
+02:26:19:2619:PM PosSynchronizedSoftpinKey, Errorcode = 0
