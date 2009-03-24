@@ -18,7 +18,7 @@ namespace EPAY_POS_GateWay.Common
         {
             Console.Out.WriteLine(strMessage);
 
-            string strLogPath = AppConfiguration.App_Path + "\\Log\\";
+            string strLogPath = AppConfiguration.App_Path + @"\Log\";
             string strYear = DateTime.Now.Year.ToString();
             string strMonth = DateTime.Now.Month.ToString();
             string strDay = DateTime.Now.Day.ToString();
@@ -27,23 +27,23 @@ namespace EPAY_POS_GateWay.Common
             System.IO.DirectoryInfo d1 = new System.IO.DirectoryInfo(strLogPath);
             if (!d1.Exists)
                 d1.Create();
-            strLogPath += "\\" + strYear;
+            strLogPath += @"\" + strYear;
 
             System.IO.DirectoryInfo d2 = new System.IO.DirectoryInfo(strLogPath);
             if (!d2.Exists)
                 d2.Create();
-            strLogPath += "\\" + strMonth;
+            strLogPath += @"\" + strMonth;
 
             System.IO.DirectoryInfo d3 = new System.IO.DirectoryInfo(strLogPath);
             if (!d3.Exists)
                 d3.Create();
-            strLogPath += "\\" + strDay;
+            strLogPath += @"\" + strDay;
 
             System.IO.DirectoryInfo d4 = new System.IO.DirectoryInfo(strLogPath);
             if (!d4.Exists)
                 d4.Create();
 
-            strLogPath = strLogPath + "\\" + strFileName;
+            strLogPath = strLogPath + @"\" + strFileName;
             //strLogPath = "E:\\" + strFileName;
 
             System.IO.FileStream fs = new System.IO.FileStream(strLogPath, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.Write);

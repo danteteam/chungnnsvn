@@ -27,6 +27,12 @@ namespace EPAY_POS_GateWay.Proccess
         Transaction transObj = new Transaction();
 
         #region public IsoMessage PosSignOnOff(IsoMessage request)
+        /// <summary>
+        /// SignOn/Off as POS
+        /// ChungNN 03/2009
+        /// </summary>
+        /// <param name="request">IsoMessage</param>
+        /// <returns>IsoMessage</returns>
         public IsoMessage PosSignOnOff(IsoMessage request)
         {
             topupObj = new TopupInterface();
@@ -83,57 +89,103 @@ namespace EPAY_POS_GateWay.Proccess
             catch
             {
                 mfact.Setfield(39, "01", ref response);
-            }    
-
-            //Create a response            
-            ///*            
-            //mfact.Setfield(2, request.GetField(2), ref response);
+            }  
+                      
             mfact.Setfield(7, DateTime.Now.ToString("ddMMhhmmss"), ref response);            
-            //mfact.Setfield(18, request.GetField(18), ref response);
-            //mfact.Setfield(32, request.GetField(32), ref response);            
-            //mfact.Setfield(48, request.GetField(48), ref response);
-            //mfact.Setfield(52, request.GetField(52), ref response);
-            //mfact.Setfield(70, request.GetField(70), ref response);
-            //*/
 
             return response;
-            
-            //<parse type="0800"> 
-            //<field num="2" type="LLVAR" length="0" />    	    <!--mã đại lý -->   
-            //<field num="7" type="NUMERIC" length="10"/>     <!--Transaction Date and Time -->
-            //<field num="11" type="NUMERIC" length="6" />   <!--System Trace-->
-            //<field num="18" type="NUMERIC" length="4" />    <!--Merchant Type: Giá trị là 6011 đối với POS-->
-            //<field num="32" type="LLVAR" length="0" />      <!--Acquiring Institution Identification Code-->
-            //<field num="48" type="LLVAR" length="0" />    <!--nội dung hướng dẫn -->
-            //<field num="52" type="LLLVAR" length="0" />     <!--Đưa mã máy POS vào-->
-            //<field num="70" type="LLLVAR" length="0" />    <!--kiểu network request cần xử lý-	001: Signon-	002: Signoff-	161: Key Exchange--> 
+          
         }
         #endregion
 
         #region public IsoMessage Download(IsoMessage request)
+        /// <summary>
+        /// POS download softpin
+        /// ChungNN 03/2009
+        /// </summary>
+        /// <param name="request">IsoMessage</param>
+        /// <returns>IsoMessage</returns>
         public IsoMessage Download(IsoMessage request)
         {
             topupObj = new TopupInterface();
+            
+            //create response message
+            mfact = new MessageFactory();
+            mfact = ConfigParser.CreateFromFile(AppConfiguration.App_Path + AppConfiguration.POSConfig_ISOFile);
+            IsoMessage response = mfact.CreateResponse(request);
             bool blnDownloadTemplate = !request.HasField(48);
 
             //Download template
             if (blnDownloadTemplate)
             {
+                try
+                {
+                    //get request values
+                    topupObj = new TopupInterface();
+                    BatchBuyObject buyObj = new BatchBuyObject();
+
+                    int nPos_ID = int.Parse(request.GetField(52).Value.ToString());                    
+                    string strRequest = request.GetField(11).Value.ToString();                                        
+                    
+                    buyObj = topupObj.PosDownloadSoftpinTemplate(nPos_ID, 0, strRequest, null);
+                    
+                    if (buyObj.ErrorCode == 0)
+                    {
+                        mfact.Setfield(39, "00", ref response);
+                    }
+                    else
+                    {
+                        mfact.Setfield(39, "01", ref response);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
 
             }
             //Download single
             else
             {
+                try
+                {
+                    //get request values
+                    topupObj = new TopupInterface();
+                    BatchBuyObject buyObj = new BatchBuyObject();
 
+                    int nPos_ID = int.Parse(request.GetField(52).Value.ToString());
+                    String[] arrRequestValues = request.GetField(48).Value.ToString().Split(AppConfiguration.POS_Seperator_Char);
+                    string strRequest = request.GetField(11).Value.ToString();
+                    string strCategoryName = arrRequestValues[0];
+                    string strServiceProviderName = arrRequestValues[1];
+                    int nProductValue = int.Parse(arrRequestValues[2]);
+                    int nStockQuantity = int.Parse(arrRequestValues[3]);
+                    int nDownloadQuantity = int.Parse(arrRequestValues[4]);
+
+                    buyObj = topupObj.PosDownloadSingleSoftpin(nPos_ID, 0, strRequest, strCategoryName, strServiceProviderName, nProductValue, nStockQuantity, nDownloadQuantity);
+                    if (buyObj.ErrorCode == 0)
+                    {
+                        mfact.Setfield(39, "00", ref response); 
+                    }
+                    else
+                    {
+                        mfact.Setfield(39, "01", ref response); 
+                    }
+
+                    //create response message
+                    mfact = new MessageFactory();
+                    mfact = ConfigParser.CreateFromFile(AppConfiguration.App_Path + AppConfiguration.POSConfig_ISOFile);
+                    response = mfact.CreateResponse(request);
+                }
+                catch (Exception ex)
+                {
+                    throw (ex);
+                }
             }
-
-            mfact = new MessageFactory();
-            mfact = ConfigParser.CreateFromFile(AppConfiguration.App_Path + AppConfiguration.POSConfig_ISOFile);
-            IsoMessage response = mfact.CreateResponse(request);
+            
             return response;
         }
         #endregion
-
 
     }
 }

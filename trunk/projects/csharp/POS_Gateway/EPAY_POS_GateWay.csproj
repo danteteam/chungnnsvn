@@ -76,6 +76,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="POS_Config.xml" />
     <Content Include="POSConfig_ISOFile.xml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -164,10 +165,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://203.162.14.229:8084/service.asmx">
+    <WebReferenceUrl Include="http://agile.vn:81/topupinterface/Service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\TopupInterface\</RelPath>
-      <UpdateFromURL>http://203.162.14.229:8084/service.asmx</UpdateFromURL>
+      <UpdateFromURL>http://agile.vn:81/topupinterface/Service.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
