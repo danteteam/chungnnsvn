@@ -51,10 +51,13 @@ namespace EPAY_POS_GateWay
                         //We're not expecting ETX in this case
                         socket.GetStream().Read(buf, 0, buf.Length);
                         count++;
-                        //Set a job to parse the message and respond
-                        //Delay it a bit to pretend we're doing something important
+                        //Set a job to parse the message and respond                        
                         Processor p = new Processor(buf, socket, mfact);
                         new Thread(new ThreadStart(p.Respond)).Start();
+
+                        Thread.Sleep(AppConfiguration.POS_Response_TimeOut);
+                        socket.Close();
+                        break;                        
                     }
                 }
             }
@@ -62,7 +65,7 @@ namespace EPAY_POS_GateWay
             {
                 transObj.WriteLog("Exception occurred="+ ex.ToString());
             }
-            transObj.WriteLog("Exiting after reading {"+ count.ToString() +"} requests");
+            //transObj.WriteLog("Exiting after reading {"+ count.ToString() +"} requests");
             try
             {
                 socket.Close();
@@ -84,7 +87,10 @@ namespace EPAY_POS_GateWay
         }
        
         static void Main(string[] args)
-        {            
+        {
+            //EPAY_POS_GateWay.Proccess.TopupInterface ttt = new EPAY_POS_GateWay.Proccess.TopupInterface();
+            //ttt.testTopupInterface();
+
             Transaction transObj = new Transaction();
             TcpListener TcpListenerObj = new TcpListener(String2IPAddress(AppConfiguration.Server_IP_Address), AppConfiguration.Server_Port);
               
@@ -120,8 +126,8 @@ namespace EPAY_POS_GateWay
             while (true)
             {
                 try
-                {
-                    TcpClient client = TcpListenerObj.AcceptTcpClient();
+                {                    
+                    TcpClient client = TcpListenerObj.AcceptTcpClient();                    
                     Server sproc = new Server(client);
                     nMessageCounter++;
                     Console.Out.Write(nMessageCounter.ToString() + ". (" + DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss:tt") + ")");
@@ -168,7 +174,7 @@ namespace EPAY_POS_GateWay
                     //pos request logon/logoff
                     case "800":
                     {
-                        response = posObj.PosSignOnOff(request); 
+                        response = posObj.PosSignOnOff(request);
                         break;
                     }
                     //pos request download
@@ -188,7 +194,7 @@ namespace EPAY_POS_GateWay
              
                 //Response message
                 byte[] outGoing = response.getByte(4, true);
-                Console.Out.Write(System.Text.Encoding.ASCII.GetString(outGoing));                
+                Console.Out.WriteLine(System.Text.Encoding.ASCII.GetString(outGoing));                
                 response.Write(sock.GetStream(), 4, true);
                 
 

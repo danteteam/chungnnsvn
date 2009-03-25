@@ -124,7 +124,7 @@ namespace EPAY_POS_GateWay.TopupInterface {
         
         /// <remarks/>
         public Service() {
-            this.Url = global::EPAY_POS_GateWay.Properties.Settings.Default.EPAY_POS_GateWay_TopupInterface_Service;
+            this.Url = global::EPAY_POS_GateWay.Configuration.Settings.Default.EPAY_POS_GateWay_TopupInterface_Service;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

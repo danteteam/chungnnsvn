@@ -20,7 +20,10 @@ namespace EPAY_POS_GateWay.Configuration
         public readonly static string TopupInterfacePassword = EPAY_POS_GateWay.Configuration.Settings.Default.TopupInterfacePassword;
       
         public readonly static string POSConfig_ISOFile = EPAY_POS_GateWay.Configuration.Settings.Default.POSConfig_ISOFile;
-        public readonly static char POS_Seperator_Char = char.Parse(EPAY_POS_GateWay.Properties.Settings.Default.POS_Seperator_Char.ToString());
+        public readonly static char POS_Seperator_Char = char.Parse(EPAY_POS_GateWay.Configuration.Settings.Default.POS_Seperator_Char.ToString());
+        public readonly static int POS_Response_TimeOut = EPAY_POS_GateWay.Configuration.Settings.Default.POS_Response_TimeOut;
+        public readonly static int TopupInterface_TimeOut = EPAY_POS_GateWay.Configuration.Settings.Default.TopupInterface_TimeOut;
+        
                                                
         public AppConfiguration()
         {            
