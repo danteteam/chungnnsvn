@@ -86,8 +86,9 @@ namespace EPAY_POS_GateWay.Proccess
                     transObj.WriteLog("->POS Key Exchange");
                 }
             }
-            catch
+            catch(Exception ex)
             {
+                transObj.WriteLog("->Exception=" + ex.Message);
                 mfact.Setfield(39, "01", ref response);
             }  
                       
@@ -114,74 +115,104 @@ namespace EPAY_POS_GateWay.Proccess
             mfact = ConfigParser.CreateFromFile(AppConfiguration.App_Path + AppConfiguration.POSConfig_ISOFile);
             IsoMessage response = mfact.CreateResponse(request);
             bool blnDownloadTemplate = !request.HasField(48);
-
-            //Download template
-            if (blnDownloadTemplate)
+            string strRequest = request.GetField(11).Value.ToString();
+            int nMerchant_ID = int.Parse(request.GetField(2).Value.ToString());
+            int nPos_ID = int.Parse(request.GetField(52).Value.ToString());
+            
+            //if exist session
+            if (!Common.ServiceSessionManager.GetSessionInstance().IsExistedSession(nPos_ID.ToString(), strRequest))
             {
-                try
-                {
-                    //get request values
-                    topupObj = new TopupInterface();
-                    BatchBuyObject buyObj = new BatchBuyObject();
-
-                    int nPos_ID = int.Parse(request.GetField(52).Value.ToString());                    
-                    string strRequest = request.GetField(11).Value.ToString();                                        
-                    
-                    buyObj = topupObj.PosDownloadSoftpinTemplate(nPos_ID, 0, strRequest, null);
-                    
-                    if (buyObj.ErrorCode == 0)
-                    {
-                        mfact.Setfield(39, "00", ref response);
-                    }
-                    else
-                    {
-                        mfact.Setfield(39, "01", ref response);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw (ex);
-                }
-
+                mfact.Setfield(39, "01", ref response);
+                transObj.WriteLog("->download fail, session not exist");
             }
-            //Download single
             else
             {
-                try
+                //Download template
+                if (blnDownloadTemplate)
                 {
-                    //get request values
-                    topupObj = new TopupInterface();
-                    BatchBuyObject buyObj = new BatchBuyObject();
-
-                    int nPos_ID = int.Parse(request.GetField(52).Value.ToString());
-                    String[] arrRequestValues = request.GetField(48).Value.ToString().Split(AppConfiguration.POS_Seperator_Char);
-                    string strRequest = request.GetField(11).Value.ToString();
-                    string strCategoryName = arrRequestValues[0];
-                    string strServiceProviderName = arrRequestValues[1];
-                    int nProductValue = int.Parse(arrRequestValues[2]);
-                    int nStockQuantity = int.Parse(arrRequestValues[3]);
-                    int nDownloadQuantity = int.Parse(arrRequestValues[4]);
-
-                    buyObj = topupObj.PosDownloadSingleSoftpin(nPos_ID, 0, strRequest, strCategoryName, strServiceProviderName, nProductValue, nStockQuantity, nDownloadQuantity);
-                    if (buyObj.ErrorCode == 0)
+                    try
                     {
-                        mfact.Setfield(39, "00", ref response); 
+                        //get request values
+                        topupObj = new TopupInterface();
+                        BatchBuyObject buyObj = new BatchBuyObject();
+                     
+                        //String[] arrRequestValues = request.GetField(48).Value.ToString().Split(AppConfiguration.POS_Seperator_Char);
+                        //string strCategoryName = arrRequestValues[0];
+                        //string strServiceProviderName = arrRequestValues[1];
+                        //int nProductValue = int.Parse(arrRequestValues[2]);
+                        //int nStockQuantity = int.Parse(arrRequestValues[3]);
+                        //int nDownloadQuantity = int.Parse(arrRequestValues[4]);
+
+                        object[] SoftpinStock = new object[1];
+
+                        StockObject stockObj = new StockObject();
+                        stockObj.ProductValue = 10000;
+                        stockObj.CategoryName = "Thẻ ĐTDĐ";
+                        stockObj.ServiceProviderName = "Vinaphone";
+                        stockObj.StockQuantity = 0;
+                        SoftpinStock[0] = stockObj;
+
+                        buyObj = topupObj.PosDownloadSoftpinTemplate(nPos_ID, nMerchant_ID, strRequest, SoftpinStock);
+
+                        if (buyObj.ErrorCode == 0)
+                        {
+                            mfact.Setfield(39, "00", ref response);
+                            transObj.WriteLog("->download template successfull");
+                        }
+                        else
+                        {
+                            mfact.Setfield(39, "01", ref response);
+                            transObj.WriteLog("->download template fail");
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        mfact.Setfield(39, "01", ref response); 
+                        transObj.WriteLog("->download template execption =" + ex.ToString());
+                        throw (ex);
                     }
 
-                    //create response message
-                    mfact = new MessageFactory();
-                    mfact = ConfigParser.CreateFromFile(AppConfiguration.App_Path + AppConfiguration.POSConfig_ISOFile);
-                    response = mfact.CreateResponse(request);
                 }
-                catch (Exception ex)
+                //Download single
+                else
                 {
-                    throw (ex);
+                    try
+                    {
+                        //get request values
+                        topupObj = new TopupInterface();
+                        BatchBuyObject buyObj = new BatchBuyObject();
+
+                        String[] arrRequestValues = request.GetField(48).Value.ToString().Split(AppConfiguration.POS_Seperator_Char);
+                        string strCategoryName = arrRequestValues[0];
+                        string strServiceProviderName = arrRequestValues[1];
+                        int nProductValue = int.Parse(arrRequestValues[2]);
+                        int nStockQuantity = int.Parse(arrRequestValues[3]);
+                        int nDownloadQuantity = int.Parse(arrRequestValues[4]);
+
+                        buyObj = topupObj.PosDownloadSingleSoftpin(nPos_ID, nMerchant_ID, strRequest, strCategoryName, strServiceProviderName, nProductValue, nStockQuantity, nDownloadQuantity);
+
+                        if (buyObj.ErrorCode == 0)
+                        {
+                            mfact.Setfield(39, "00", ref response);
+                            transObj.WriteLog("->download single successfull");
+                        }
+                        else
+                        {
+                            mfact.Setfield(39, "01", ref response);
+                            transObj.WriteLog("->download single fail");
+                        }
+
+                        //create response message
+                        mfact = new MessageFactory();
+                        mfact = ConfigParser.CreateFromFile(AppConfiguration.App_Path + AppConfiguration.POSConfig_ISOFile);
+                        response = mfact.CreateResponse(request);
+                    }
+                    catch (Exception ex)
+                    {
+                        transObj.WriteLog("->download single execption =" + ex.ToString());
+                        throw (ex);
+                    }
                 }
-            }
+            }            
             
             return response;
         }

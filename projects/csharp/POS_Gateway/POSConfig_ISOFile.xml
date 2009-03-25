@@ -33,9 +33,9 @@
   <!--Request message: download softpin-->
   <header type="0200">0200</header>
   <parse type="0200">
-    <field num="2" type="LLVAR" length="0"/>
-    <field num="3" type="NUMERIC" length="6"/>
-    <field num="4" type="NUMERIC" length="12"/>     
+    <field num="2" type="LLVAR" length="0"/>        <!--Merchant ID -->   
+    <field num="3" type="NUMERIC" length="6"/>      <!--Proccessing Code -->
+    <field num="4" type="NUMERIC" length="12"/>     <!--Transaction Amount-->
     <field num="7" type="NUMERIC" length="10"/>     <!--Transaction Date and Time -->
     <field num="11" type="NUMERIC" length="10" />   <!--System Trace-->
     <field num="18" type="NUMERIC" length="4" />    <!--Merchant Type: Giá trị là 6011 đối với POS-->
@@ -43,8 +43,8 @@
     <field num="39" type="NUMERIC" length="2" />    <!--Acquiring Institution Identification Code-->    
     <field num="48" type="LLLVAR" length="0" />     <!--Pos password admin -->
     <field num="52" type="LLVAR" length="0" />      <!--Pos id -->
-    <field num="61" type="LLLVAR" length="0" />      
-    <field num="62" type="LLLVAR" length="0" />    
+    <field num="61" type="LLLVAR" length="0" />     <!--Pos username --> 
+    <field num="62" type="LLLVAR" length="0" />     <!--Checksum --> 
   </parse>
   <template type="0200">
     <field num="2" type="LLLVAR" length="0">ChungNN test</field>
@@ -53,9 +53,9 @@
    <!--Request message: download softpin-->
   <header type="0210">0210</header>
   <parse type="0210">
-    <field num="2" type="LLVAR" length="0"/>
-    <field num="3" type="NUMERIC" length="6"/>
-    <field num="4" type="NUMERIC" length="12"/>     
+    <field num="2" type="LLVAR" length="0"/>        <!--Merchant ID -->   
+    <field num="3" type="NUMERIC" length="6"/>      <!--Proccessing Code -->
+    <field num="4" type="NUMERIC" length="12"/>     <!--Transaction Amount-->
     <field num="7" type="NUMERIC" length="10"/>     <!--Transaction Date and Time -->
     <field num="11" type="NUMERIC" length="10" />   <!--System Trace-->
     <field num="18" type="NUMERIC" length="4" />    <!--Merchant Type: Giá trị là 6011 đối với POS-->
@@ -63,8 +63,8 @@
     <field num="39" type="NUMERIC" length="2" />    <!--Acquiring Institution Identification Code-->    
     <field num="48" type="LLLVAR" length="0" />     <!--Pos password admin -->
     <field num="52" type="LLVAR" length="0" />      <!--Pos id -->
-    <field num="61" type="LLLVAR" length="0" />      
-    <field num="62" type="LLLVAR" length="0" />    
+    <field num="61" type="LLLVAR" length="0" />     <!--Pos username --> 
+    <field num="62" type="LLLVAR" length="0" />     <!--Checksum --> 
   </parse>
   <template type="0210">
     <field num="2" type="LLLVAR" length="0">ChungNN test</field>

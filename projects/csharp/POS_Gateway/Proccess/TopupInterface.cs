@@ -32,7 +32,7 @@ namespace EPAY_POS_GateWay.Proccess
             string blnRetvalue = "";
             try
             {
-                SignInResult sginObj = srvObj.GetToken(AppConfiguration.TopupInterfaceUserName, AppConfiguration.TopupInterfacePassword);
+                SignInResult sginObj = srvObj.GetToken(AppConfiguration.TopupInterfaceUserName, AppConfiguration.TopupInterfacePassword);             
                 if (sginObj.ErrorCode != 0)
                 {
                     sginObj = srvObj.SignIn(AppConfiguration.TopupInterfaceUserName, AppConfiguration.TopupInterfacePassword);
@@ -75,6 +75,8 @@ namespace EPAY_POS_GateWay.Proccess
                     strTopupInterfaceToken = ServiceSessionManager.GetSessionInstance().GetSession("TopupInterfaceToken");
                 else
                 {
+                    //new Thread(new ThreadStart(SignIn)).Start();
+
                     strTopupInterfaceToken = SignIn();
                 }
             }
@@ -169,6 +171,7 @@ namespace EPAY_POS_GateWay.Proccess
 
             //string RequestID = Guid.NewGuid().ToString().Substring(0, 19);
             buyObj = srvObj.PosDownloadSingleSoftpin(Pos_ID, Merchant_ID, RequestID, CategoryName, ServiceProviderName, ProductValue, StockQuantity, DownloadQuantity, strTopupInterfaceToken);
+            Thread.Sleep(AppConfiguration.TopupInterface_TimeOut);
             //buyObj = srvObj.PosDownloadSingleSoftpin(Pos_ID, Merchant_ID, RequestID, CategoryName, ServiceProviderName, ProductValue, StockQuantity, strTopupInterfaceToken);
             
             return buyObj;
@@ -176,7 +179,7 @@ namespace EPAY_POS_GateWay.Proccess
         }
         #endregion
 
-        #region PosDownloadSingleSoftpin
+        #region public BatchBuyObject PosDownloadSoftpinTemplate(int Pos_ID, int Merchant_ID, string RequestID, object[] SoftpinStock)
         /// <summary>
         /// POS download softpin in template
         /// ChungNN 03/2009
@@ -192,6 +195,7 @@ namespace EPAY_POS_GateWay.Proccess
             string strTopupInterfaceToken = ServiceSessionManager.GetSessionInstance().GetSession("TopupInterfaceToken");
 
             buyObj = srvObj.PosDownloadSoftpinTemplate(Pos_ID, Merchant_ID, RequestID, SoftpinStock, strTopupInterfaceToken);
+            Thread.Sleep(AppConfiguration.TopupInterface_TimeOut);
 
             return buyObj;
             //transObj.WriteLog("PosDownloadSingleSoftpin, Errorcode = " + buyObj.ErrorCode.ToString());
@@ -200,13 +204,14 @@ namespace EPAY_POS_GateWay.Proccess
 
         public void testTopupInterface()
         {
+            /*
             Service srvObj = new Service();
             Transaction transObj = new Transaction();
 
-            //int Pos_ID = 6;
-            //int Merchant_ID = 28;
-            //string RequestID;
-            //string Merchant_UserName = "camnhung";
+            int Pos_ID = 6;
+            int Merchant_ID = 28;
+            string RequestID;
+            string Merchant_UserName = "camnhung";
             BatchBuyObject buyObj = new BatchBuyObject();
 
                          
@@ -217,20 +222,20 @@ namespace EPAY_POS_GateWay.Proccess
             {
                 sginObj = srvObj.SignIn("postopup", "123456");
             }
-            transObj.WriteLog("SignIn, Errorcode = " + sginObj.ErrorCode + ",token=" + sginObj.Token);
+            //transObj.WriteLog("SignIn, Errorcode = " + sginObj.ErrorCode + ",token=" + sginObj.Token);
             #endregion
 
             #region test PosLogon
             ErrorResult ErrObj = srvObj.PosLogon(6, "12345678", sginObj.Token);
-            transObj.WriteLog("PosLogon, Errorcode = " + ErrObj.ErrorCode);
+            //transObj.WriteLog("PosLogon, Errorcode = " + ErrObj.ErrorCode);
             #endregion
             
-            /*
+            
             #region PosDownloadSoftpinTemplate
-            buyObj = new BatchBuyObject();
+            buyObj = new BatchBuyObject();            
             RequestID = Guid.NewGuid().ToString().Substring(0, 19);
-            buyObj = srvObj.PosDownloadSingleSoftpin(Pos_ID, Merchant_ID, RequestID, "Thẻ ĐTDĐ", "Vinaphone", 10000, 99, sginObj.Token);
-            transObj.WriteLog("PosDownloadSingleSoftpin, Errorcode = " + buyObj.ErrorCode.ToString());
+            buyObj = srvObj.PosDownloadSingleSoftpin(Pos_ID, Merchant_ID, RequestID, "Thẻ ĐTDĐ", "Vinaphone", 10000, 99, 5, sginObj.Token);
+            //transObj.WriteLog("PosDownloadSingleSoftpin, Errorcode = " + buyObj.ErrorCode.ToString());
             #endregion
 
             #region PosDownloadSoftpinTemplate
@@ -252,6 +257,7 @@ namespace EPAY_POS_GateWay.Proccess
             SoftpinStock[1] = stockObj;
 
             buyObj = srvObj.PosDownloadSoftpinTemplate(Pos_ID, Merchant_ID, RequestID, SoftpinStock, sginObj.Token);
+            
             transObj.WriteLog("PosDownloadSoftpinTemplate, Errorcode = " + buyObj.ErrorCode.ToString());
             #endregion
 
